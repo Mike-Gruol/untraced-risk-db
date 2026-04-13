@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "version": "1.0",
-    "last_updated": "2026-03-31",
-    "total_apps": 179,
+    "version": "1.3",
+    "last_updated": "2026-04-09",
+    "total_apps": 256,
     "description": "Privacy Auditor seed risk database. Category risk tiers: 1=Low, 2=Medium, 3=High. Combined with permission aggressiveness score to produce final risk indicator.",
     "scoring_note": "Risk indicators are based on app category, permission configuration, and publicly available information. They are provided for general awareness only and do not constitute definitive claims about any app or developer's data practices."
   },
@@ -69,6 +69,41 @@
       "override_tier": 1,
       "direction": "down",
       "basis": "Open-source password manager with audited code and documented minimal data collection practices."
+    },
+    {
+      "publisher": "Google (AOSP)",
+      "package_prefix": "com.android.",
+      "override_tier": 1,
+      "direction": "down",
+      "basis": "Core Android OS component. Permissions are structurally required for system functionality and are typically non-revocable or essential for device operation (e.g., emergency services, telephony, debugging). Not a standalone data collector."
+    },
+    {
+      "publisher": "Google Play Services",
+      "package_prefix": "com.google.android.gms",
+      "override_tier": 1,
+      "direction": "down",
+      "basis": "Google Play Services system framework and sub-components. Permissions support core device services including location APIs, connectivity, and system integration. Revoking permissions may impair device functionality for all dependent apps."
+    },
+    {
+      "publisher": "Google",
+      "package_prefix": "com.google.android.apps.cbrsnetworkmonitor",
+      "override_tier": 1,
+      "direction": "down",
+      "basis": "FCC-mandated CBRS spectrum coordination service. Location access is required by federal regulation (Part 96) for shared spectrum allocation. Not a user-facing data collector."
+    },
+    {
+      "publisher": "Samsung (Shannon Modem)",
+      "package_prefix": "com.shannon.",
+      "override_tier": 1,
+      "direction": "down",
+      "basis": "Samsung Shannon baseband modem component. Permissions support telephony functions including VoLTE, Wi-Fi calling, and E911 emergency location reporting. Revoking permissions may impair calling and emergency services."
+    },
+    {
+      "publisher": "Google",
+      "package_prefix": "com.google.android.apps.stargate",
+      "override_tier": 1,
+      "direction": "down",
+      "basis": "Satellite emergency SOS gateway service. Location access is essential for transmitting position data to emergency responders via satellite. Only active during satellite SOS sessions."
     }
   ],
   "apps": [
@@ -518,7 +553,7 @@
       "publisher": "Various",
       "category": "free_utility",
       "category_risk_tier": 3,
-      "notes": "Free VPN apps have historically been associated with data logging and selling user data \u2014 including location information \u2014 to third parties, which is counter to their stated privacy purpose."
+      "notes": "Free VPN apps have historically been associated with data logging and selling user data — including location information — to third parties, which is counter to their stated privacy purpose."
     },
     {
       "package_name": "com.battery.saver.free",
@@ -1212,9 +1247,9 @@
       "package_name": "com.google.android.gms",
       "display_name": "Google Play Services",
       "publisher": "Google",
-      "category": "ad_network",
-      "category_risk_tier": 3,
-      "notes": "System-level service that underpins Google's advertising and data collection infrastructure across Android. Collects location and device data to support ad targeting across the Google ecosystem."
+      "category": "google_service",
+      "category_risk_tier": 2,
+      "notes": "Core Android middleware providing location APIs, authentication, maps, analytics, and cloud services to all apps. Location permission is system-fixed and cannot be revoked. Does not independently collect location — brokers access for other apps and Google services. Revoking mic/camera breaks Google Assistant and video calling. Privacy risk derives from trusting Google's API implementation and the individual apps that consume these APIs."
     },
     {
       "package_name": "com.facebook.services",
@@ -1503,6 +1538,622 @@
       "category": "retail",
       "category_risk_tier": 2,
       "notes": ""
+    },
+    {
+      "package_name": "com.openai.chatgpt",
+      "display_name": "ChatGPT",
+      "publisher": "OpenAI",
+      "category": "ai_assistant",
+      "category_risk_tier": 2,
+      "notes": "AI assistant with microphone access for voice input"
+    },
+    {
+      "package_name": "com.google.android.apps.bard",
+      "display_name": "Google Gemini",
+      "publisher": "Google",
+      "category": "ai_assistant",
+      "category_risk_tier": 2,
+      "notes": "Google AI assistant with voice and camera access"
+    },
+    {
+      "package_name": "com.microsoft.copilot",
+      "display_name": "Microsoft Copilot",
+      "publisher": "Microsoft",
+      "category": "ai_assistant",
+      "category_risk_tier": 2,
+      "notes": "AI assistant with microphone and camera access"
+    },
+    {
+      "package_name": "com.deepseek.chat",
+      "display_name": "DeepSeek",
+      "publisher": "DeepSeek",
+      "category": "ai_assistant",
+      "category_risk_tier": 2,
+      "notes": "AI assistant app"
+    },
+    {
+      "package_name": "com.anthropic.claude",
+      "display_name": "Claude",
+      "publisher": "Anthropic",
+      "category": "ai_assistant",
+      "category_risk_tier": 2,
+      "notes": "AI assistant"
+    },
+    {
+      "package_name": "com.perplexity.app",
+      "display_name": "Perplexity",
+      "publisher": "Perplexity AI",
+      "category": "ai_assistant",
+      "category_risk_tier": 2,
+      "notes": "AI search assistant with microphone access"
+    },
+    {
+      "package_name": "com.google.android.apps.googleassistant",
+      "display_name": "Google Assistant",
+      "publisher": "Google",
+      "category": "ai_assistant",
+      "category_risk_tier": 2,
+      "notes": "Voice assistant requiring always-on microphone access"
+    },
+    {
+      "package_name": "com.amazon.dee.app",
+      "display_name": "Amazon Alexa",
+      "publisher": "Amazon",
+      "category": "ai_assistant",
+      "category_risk_tier": 2,
+      "notes": "Voice assistant with persistent microphone access"
+    },
+    {
+      "package_name": "com.samsung.android.bixby.agent",
+      "display_name": "Bixby",
+      "publisher": "Samsung",
+      "category": "ai_assistant",
+      "category_risk_tier": 2,
+      "notes": "Samsung voice assistant with microphone access"
+    },
+    {
+      "package_name": "com.microsoft.bing",
+      "display_name": "Microsoft Bing",
+      "publisher": "Microsoft",
+      "category": "ai_assistant",
+      "category_risk_tier": 2,
+      "notes": "AI-powered search with voice and camera features"
+    },
+    {
+      "package_name": "ai.character.app",
+      "display_name": "Character.AI",
+      "publisher": "Character.AI",
+      "category": "ai_assistant",
+      "category_risk_tier": 2,
+      "notes": "AI chat platform with voice features"
+    },
+    {
+      "package_name": "com.poe.android",
+      "display_name": "Poe",
+      "publisher": "Quora",
+      "category": "ai_assistant",
+      "category_risk_tier": 2,
+      "notes": "Multi-model AI chat platform"
+    },
+    {
+      "package_name": "com.jasper.ai",
+      "display_name": "Jasper AI",
+      "publisher": "Jasper AI",
+      "category": "ai_assistant",
+      "category_risk_tier": 2,
+      "notes": "AI writing assistant"
+    },
+    {
+      "package_name": "com.grammarly.android.keyboard",
+      "display_name": "Grammarly",
+      "publisher": "Grammarly",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Writing assistant keyboard with broad text access"
+    },
+    {
+      "package_name": "com.lensa.app",
+      "display_name": "Lensa AI",
+      "publisher": "Prisma Labs",
+      "category": "ai_assistant",
+      "category_risk_tier": 2,
+      "notes": "AI photo editor requiring camera access"
+    },
+    {
+      "package_name": "com.amazon.mShoppingApp",
+      "display_name": "Amazon Shopping",
+      "publisher": "Amazon",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Major retailer with location and camera for AR features"
+    },
+    {
+      "package_name": "com.einnovation.temu",
+      "display_name": "Temu",
+      "publisher": "PDD Holdings",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Shopping app with broad data collection practices"
+    },
+    {
+      "package_name": "com.zzkko",
+      "display_name": "SHEIN",
+      "publisher": "SHEIN",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Fast fashion app with extensive data collection"
+    },
+    {
+      "package_name": "com.shopify.mobile",
+      "display_name": "Shop",
+      "publisher": "Shopify",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Shopping and order tracking app"
+    },
+    {
+      "package_name": "com.wish.shopping",
+      "display_name": "Wish",
+      "publisher": "ContextLogic",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Discount shopping app"
+    },
+    {
+      "package_name": "com.alibaba.aliexpresshd",
+      "display_name": "AliExpress",
+      "publisher": "Alibaba",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "International marketplace with data collection practices"
+    },
+    {
+      "package_name": "com.costco.app.android",
+      "display_name": "Costco",
+      "publisher": "Costco",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Retail membership app with location"
+    },
+    {
+      "package_name": "com.nike.omega",
+      "display_name": "Nike",
+      "publisher": "Nike",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Retail and fitness app with location"
+    },
+    {
+      "package_name": "com.adidas.app",
+      "display_name": "adidas",
+      "publisher": "adidas",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Retail and fitness app"
+    },
+    {
+      "package_name": "com.vinted.android",
+      "display_name": "Vinted",
+      "publisher": "Vinted",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Secondhand marketplace with location"
+    },
+    {
+      "package_name": "com.letgo.android",
+      "display_name": "Marketplace by Facebook",
+      "publisher": "Meta",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Facebook marketplace with location"
+    },
+    {
+      "package_name": "com.nordstrom.shopping",
+      "display_name": "Nordstrom",
+      "publisher": "Nordstrom",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Retail app with location"
+    },
+    {
+      "package_name": "com.gap.android",
+      "display_name": "Gap",
+      "publisher": "Gap",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Retail app"
+    },
+    {
+      "package_name": "com.chewy.android",
+      "display_name": "Chewy",
+      "publisher": "Chewy",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Pet supply retailer app"
+    },
+    {
+      "package_name": "com.zellepay.zelle",
+      "display_name": "Zelle",
+      "publisher": "Early Warning Services",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Bank transfer app"
+    },
+    {
+      "package_name": "com.kraken.trade",
+      "display_name": "Kraken",
+      "publisher": "Payward",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Crypto exchange"
+    },
+    {
+      "package_name": "com.binance.dev",
+      "display_name": "Binance",
+      "publisher": "Binance",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Crypto exchange with identity verification"
+    },
+    {
+      "package_name": "com.chime.mobile",
+      "display_name": "Chime",
+      "publisher": "Chime",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Online bank with location and camera for check deposit"
+    },
+    {
+      "package_name": "com.sofi.android",
+      "display_name": "SoFi",
+      "publisher": "SoFi Technologies",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Financial services app"
+    },
+    {
+      "package_name": "com.acorns.android",
+      "display_name": "Acorns",
+      "publisher": "Acorns",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Micro-investing app"
+    },
+    {
+      "package_name": "com.wealthfront.app",
+      "display_name": "Wealthfront",
+      "publisher": "Wealthfront",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Automated investment app"
+    },
+    {
+      "package_name": "com.betterment",
+      "display_name": "Betterment",
+      "publisher": "Betterment",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Investment management app"
+    },
+    {
+      "package_name": "com.creditkarma.mobile",
+      "display_name": "Credit Karma",
+      "publisher": "Intuit",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Credit monitoring with broad personal data access"
+    },
+    {
+      "package_name": "com.experian.android",
+      "display_name": "Experian",
+      "publisher": "Experian",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Credit monitoring app"
+    },
+    {
+      "package_name": "com.mint.android",
+      "display_name": "Mint",
+      "publisher": "Intuit",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Budget tracking with financial account access"
+    },
+    {
+      "package_name": "com.intuit.quickbooks.android",
+      "display_name": "QuickBooks",
+      "publisher": "Intuit",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Business finance app"
+    },
+    {
+      "package_name": "com.turbotax.mobile",
+      "display_name": "TurboTax",
+      "publisher": "Intuit",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Tax filing app with sensitive financial data"
+    },
+    {
+      "package_name": "com.hrblock.android.refund",
+      "display_name": "H&R Block",
+      "publisher": "H&R Block",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Tax filing app"
+    },
+    {
+      "package_name": "com.ally.mobile",
+      "display_name": "Ally Bank",
+      "publisher": "Ally Financial",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Online bank with camera for check deposit"
+    },
+    {
+      "package_name": "com.discover.dcapp",
+      "display_name": "Discover Mobile",
+      "publisher": "Discover Financial Services",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Credit card and banking app"
+    },
+    {
+      "package_name": "com.americanexpress.android.acctsvcs.us",
+      "display_name": "Amex",
+      "publisher": "American Express",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Credit card app with location"
+    },
+    {
+      "package_name": "com.bankofamerica.connect",
+      "display_name": "Bank of America",
+      "publisher": "Bank of America",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Banking app with camera and location"
+    },
+    {
+      "package_name": "com.citibank.mobile.au",
+      "display_name": "Citi Mobile",
+      "publisher": "Citibank",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Banking app"
+    },
+    {
+      "package_name": "com.tdbank",
+      "display_name": "TD Bank",
+      "publisher": "TD Bank",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Banking app with camera for check deposit"
+    },
+    {
+      "package_name": "com.key.android",
+      "display_name": "KeyBank",
+      "publisher": "KeyCorp",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Banking app"
+    },
+    {
+      "package_name": "com.regions.mobile",
+      "display_name": "Regions Mobile",
+      "publisher": "Regions Financial",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Banking app with camera and location"
+    },
+    {
+      "package_name": "com.westernunion.android",
+      "display_name": "Western Union",
+      "publisher": "Western Union",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Money transfer with identity verification camera use"
+    },
+    {
+      "package_name": "com.mcdonalds.app",
+      "display_name": "McDonald's",
+      "publisher": "McDonald's",
+      "category": "food_restaurant",
+      "category_risk_tier": 2,
+      "notes": "Restaurant app with location for ordering and offers"
+    },
+    {
+      "package_name": "com.dominos",
+      "display_name": "Domino's Pizza",
+      "publisher": "Domino's",
+      "category": "food_restaurant",
+      "category_risk_tier": 2,
+      "notes": "Pizza delivery app with location tracking"
+    },
+    {
+      "package_name": "com.pizzahut.order",
+      "display_name": "Pizza Hut",
+      "publisher": "Pizza Hut",
+      "category": "food_restaurant",
+      "category_risk_tier": 2,
+      "notes": "Pizza delivery app with location"
+    },
+    {
+      "package_name": "com.tacobell.android.activity",
+      "display_name": "Taco Bell",
+      "publisher": "Taco Bell",
+      "category": "food_restaurant",
+      "category_risk_tier": 2,
+      "notes": "Restaurant app with location"
+    },
+    {
+      "package_name": "com.dunkindonuts.mobile",
+      "display_name": "Dunkin'",
+      "publisher": "Dunkin' Brands",
+      "category": "food_restaurant",
+      "category_risk_tier": 2,
+      "notes": "Coffee chain app with location"
+    },
+    {
+      "package_name": "com.subway.mobile.subwayapp03",
+      "display_name": "Subway",
+      "publisher": "Subway",
+      "category": "food_restaurant",
+      "category_risk_tier": 2,
+      "notes": "Restaurant app with location"
+    },
+    {
+      "package_name": "com.wendys.nuggets",
+      "display_name": "Wendy's",
+      "publisher": "Wendy's",
+      "category": "food_restaurant",
+      "category_risk_tier": 2,
+      "notes": "Restaurant app with location"
+    },
+    {
+      "package_name": "com.burgerking.app.android",
+      "display_name": "Burger King",
+      "publisher": "Burger King",
+      "category": "food_restaurant",
+      "category_risk_tier": 2,
+      "notes": "Restaurant app with location"
+    },
+    {
+      "package_name": "com.chick-fil-a.truett.cathy",
+      "display_name": "Chick-fil-A",
+      "publisher": "Chick-fil-A",
+      "category": "food_restaurant",
+      "category_risk_tier": 2,
+      "notes": "Restaurant app with location"
+    },
+    {
+      "package_name": "com.panera.android",
+      "display_name": "Panera Bread",
+      "publisher": "Panera Bread",
+      "category": "food_restaurant",
+      "category_risk_tier": 2,
+      "notes": "Restaurant app with location"
+    },
+    {
+      "package_name": "com.yum.kfc",
+      "display_name": "KFC",
+      "publisher": "Yum! Brands",
+      "category": "food_restaurant",
+      "category_risk_tier": 2,
+      "notes": "Restaurant app with location"
+    },
+    {
+      "package_name": "com.whiskapp.android",
+      "display_name": "Whisk",
+      "publisher": "Samsung",
+      "category": "food_restaurant",
+      "category_risk_tier": 2,
+      "notes": "Recipe and grocery app with location"
+    },
+    {
+      "package_name": "com.google.android.setupwizard",
+      "display_name": "Android Setup",
+      "publisher": "Google",
+      "category": "system_core",
+      "category_risk_tier": 1,
+      "notes": "System setup wizard used only during initial device configuration. Location access is used for locale/region detection during setup and is not actively used post-setup. Revoking permissions may interfere with factory reset setup flow."
+    },
+    {
+      "package_name": "com.google.android.as",
+      "display_name": "Android System Intelligence",
+      "publisher": "Google",
+      "category": "google_service",
+      "category_risk_tier": 2,
+      "notes": "Provides on-device ML features including Now Playing, Live Caption, Smart Compose, and app predictions. Location access supports contextual suggestions. Processing occurs on-device. Revoking location may reduce context-aware prediction quality but will not break core device functionality."
+    },
+    {
+      "package_name": "com.google.android.apps.cbrsnetworkmonitor",
+      "display_name": "CBRS Services",
+      "publisher": "Google",
+      "category": "connectivity",
+      "category_risk_tier": 2,
+      "notes": "Citizens Broadband Radio Service monitor required by FCC Part 96 rules for shared spectrum coordination. Location access is mandated by federal regulation for spectrum allocation and interference avoidance. Revoking location permission may disrupt CBRS-band connectivity on supported carriers. Tier reflects regulatory data transmission requirement."
+    },
+    {
+      "package_name": "com.android.companiondevicemanager",
+      "display_name": "Companion Device Manager",
+      "publisher": "Google (AOSP)",
+      "category": "connectivity",
+      "category_risk_tier": 1,
+      "notes": "System service that manages Bluetooth/Wi-Fi pairing with companion devices such as smartwatches and fitness trackers. Location access is required by Android for Bluetooth LE scanning. Revoking location may prevent pairing or communication with companion devices."
+    },
+    {
+      "package_name": "com.google.android.gms.location",
+      "display_name": "Fused Location",
+      "publisher": "Google",
+      "category": "system_service",
+      "category_risk_tier": 1,
+      "notes": "Core location provider that supplies fused location data to all apps via Google Play Services APIs. This is the system location engine, not a standalone data collector. Permissions are system-fixed and cannot be revoked by the user. Disabling would break location functionality for all apps on the device."
+    },
+    {
+      "package_name": "com.google.android.googlequicksearchbox",
+      "display_name": "Google",
+      "publisher": "Google",
+      "category": "google_service",
+      "category_risk_tier": 2,
+      "notes": "Google Search, Assistant, and Discover hub. Holds broad permissions including location, microphone, camera, phone, SMS, contacts, and call logs. Location powers local results and Assistant context. Microphone is used for voice search and Assistant. Phone/SMS/contacts/call log access supports caller ID, spam detection, and Assistant calling features. Permissions can be individually revoked in Settings > Apps with minimal impact — location removal limits local results, microphone removal disables voice features, phone/SMS/contacts removal disables caller ID and related Assistant features. Tier reflects breadth of data access."
+    },
+    {
+      "package_name": "com.google.android.gms.location.history",
+      "display_name": "Google Location History",
+      "publisher": "Google",
+      "category": "google_service",
+      "category_risk_tier": 3,
+      "notes": "Manages Google Timeline (formerly Location History), which records and stores device location data over time to Google servers. This is the most privacy-significant system location component — it persists historical location data beyond immediate use. Users can disable Timeline in Google Account settings. Revoking location permission limits new data collection but does not delete existing history. Tier 3 reflects persistent off-device location data storage."
+    },
+    {
+      "package_name": "com.shannon.imsservice",
+      "display_name": "ImsService",
+      "publisher": "Samsung (Shannon Modem)",
+      "category": "connectivity",
+      "category_risk_tier": 2,
+      "notes": "IP Multimedia Subsystem service providing VoLTE calling and Wi-Fi calling. Location access supports E911 emergency location reporting as required by FCC regulations. Revoking location may impair emergency call location accuracy and could affect VoLTE/Wi-Fi calling reliability. Tier reflects regulatory location transmission for emergency services."
+    },
+    {
+      "package_name": "com.google.android.mosey",
+      "display_name": "Quick Share Extension",
+      "publisher": "Google",
+      "category": "connectivity",
+      "category_risk_tier": 1,
+      "notes": "Extension for Quick Share (formerly Nearby Share) file transfer. Location access is required by Android for Wi-Fi Direct and Bluetooth device discovery. Revoking location will prevent Quick Share from discovering nearby devices. Data transfer is peer-to-peer and local."
+    },
+    {
+      "package_name": "com.google.android.apps.stargate",
+      "display_name": "Satellite Gateway",
+      "publisher": "Google",
+      "category": "system_core",
+      "category_risk_tier": 1,
+      "notes": "Manages satellite-based emergency SOS communication on supported devices. Location access is essential for transmitting position data to emergency responders via satellite. Revoking location would defeat the purpose of satellite emergency communication. Only active during satellite SOS sessions."
+    },
+    {
+      "package_name": "com.google.android.settings.intelligence",
+      "display_name": "Settings Services",
+      "publisher": "Google",
+      "category": "system_service",
+      "category_risk_tier": 2,
+      "notes": "Provides search indexing, suggestions, and contextual features within the Android Settings app. Location access supports location-related setting suggestions and contextual recommendations. Revoking location may reduce relevance of Settings suggestions but will not impair core Settings functionality. Tier reflects data processing for personalization within system settings."
+    },
+    {
+      "package_name": "com.android.shell",
+      "display_name": "Shell",
+      "publisher": "Google (AOSP)",
+      "category": "system_core",
+      "category_risk_tier": 1,
+      "notes": "Android Debug Bridge (ADB) shell process. All permissions are system-fixed and cannot be revoked by the user — this is normal Android architecture, not a security concern. Shell only executes commands when a computer is physically connected via USB with debugging enabled, or when explicitly authorized via wireless debugging. No background data collection occurs. Disabling developer options removes ADB access entirely."
+    },
+    {
+      "package_name": "com.android.PixelPlayService",
+      "display_name": "Pixel Play Service",
+      "publisher": "Google (AOSP)",
+      "category": "system_service",
+      "category_risk_tier": 1,
+      "notes": "System service related to media playback and content rendering. Location access, if present, supports location-based content or service availability features. This is a background system component with no standalone user interface. Revoking permissions may affect media playback or related system functionality."
     }
   ]
 }

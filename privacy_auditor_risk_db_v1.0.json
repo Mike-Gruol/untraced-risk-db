@@ -1,111 +1,4 @@
 {
-  "metadata": {
-    "version": "1.3",
-    "last_updated": "2026-04-09",
-    "total_apps": 256,
-    "description": "Privacy Auditor seed risk database. Category risk tiers: 1=Low, 2=Medium, 3=High. Combined with permission aggressiveness score to produce final risk indicator.",
-    "scoring_note": "Risk indicators are based on app category, permission configuration, and publicly available information. They are provided for general awareness only and do not constitute definitive claims about any app or developer's data practices."
-  },
-  "publisher_overrides": [
-    {
-      "publisher": "Verizon Media / Yahoo",
-      "package_prefix": "com.yahoo",
-      "override_tier": 3,
-      "direction": "up",
-      "basis": "Publisher has historically been associated with large-scale data monetisation and third-party data sharing practices across its app portfolio."
-    },
-    {
-      "publisher": "ByteDance",
-      "package_prefix": "com.zhiliaoapp",
-      "override_tier": 3,
-      "direction": "up",
-      "basis": "Publisher has been subject to regulatory scrutiny in multiple jurisdictions related to data collection and potential third-party data sharing practices."
-    },
-    {
-      "publisher": "Vungle / Liftoff",
-      "package_prefix": "com.vungle",
-      "override_tier": 3,
-      "direction": "up",
-      "basis": "Publisher operates primarily as an ad network and has been associated with broad data collection practices across integrated apps."
-    },
-    {
-      "publisher": "ironSource",
-      "package_prefix": "com.ironsource",
-      "override_tier": 3,
-      "direction": "up",
-      "basis": "Publisher operates as an ad monetisation platform and has been associated with extensive device and behavioural data collection practices."
-    },
-    {
-      "publisher": "Signal",
-      "package_prefix": "org.thoughtcrime",
-      "override_tier": 1,
-      "direction": "down",
-      "basis": "Publisher has a well-documented commitment to end-to-end encryption and minimal data collection. No known third-party data sharing practices."
-    },
-    {
-      "publisher": "Proton AG",
-      "package_prefix": "ch.protonmail",
-      "override_tier": 1,
-      "direction": "down",
-      "basis": "Publisher is a privacy-focused company with audited, open-source applications and a documented no-data-sharing policy."
-    },
-    {
-      "publisher": "Mozilla",
-      "package_prefix": "org.mozilla",
-      "override_tier": 1,
-      "direction": "down",
-      "basis": "Publisher is a non-profit with publicly documented privacy policies and no known data brokerage practices."
-    },
-    {
-      "publisher": "DuckDuckGo",
-      "package_prefix": "com.duckduckgo",
-      "override_tier": 1,
-      "direction": "down",
-      "basis": "Publisher's core product and business model are built on user privacy. No known third-party data sharing or location data monetisation practices."
-    },
-    {
-      "publisher": "Bitwarden",
-      "package_prefix": "com.bitwarden",
-      "override_tier": 1,
-      "direction": "down",
-      "basis": "Open-source password manager with audited code and documented minimal data collection practices."
-    },
-    {
-      "publisher": "Google (AOSP)",
-      "package_prefix": "com.android.",
-      "override_tier": 1,
-      "direction": "down",
-      "basis": "Core Android OS component. Permissions are structurally required for system functionality and are typically non-revocable or essential for device operation (e.g., emergency services, telephony, debugging). Not a standalone data collector."
-    },
-    {
-      "publisher": "Google Play Services",
-      "package_prefix": "com.google.android.gms",
-      "override_tier": 1,
-      "direction": "down",
-      "basis": "Google Play Services system framework and sub-components. Permissions support core device services including location APIs, connectivity, and system integration. Revoking permissions may impair device functionality for all dependent apps."
-    },
-    {
-      "publisher": "Google",
-      "package_prefix": "com.google.android.apps.cbrsnetworkmonitor",
-      "override_tier": 1,
-      "direction": "down",
-      "basis": "FCC-mandated CBRS spectrum coordination service. Location access is required by federal regulation (Part 96) for shared spectrum allocation. Not a user-facing data collector."
-    },
-    {
-      "publisher": "Samsung (Shannon Modem)",
-      "package_prefix": "com.shannon.",
-      "override_tier": 1,
-      "direction": "down",
-      "basis": "Samsung Shannon baseband modem component. Permissions support telephony functions including VoLTE, Wi-Fi calling, and E911 emergency location reporting. Revoking permissions may impair calling and emergency services."
-    },
-    {
-      "publisher": "Google",
-      "package_prefix": "com.google.android.apps.stargate",
-      "override_tier": 1,
-      "direction": "down",
-      "basis": "Satellite emergency SOS gateway service. Location access is essential for transmitting position data to emergency responders via satellite. Only active during satellite SOS sessions."
-    }
-  ],
   "apps": [
     {
       "package_name": "com.facebook.katana",
@@ -204,7 +97,7 @@
       "notes": ""
     },
     {
-      "package_name": "com.telegram.messenger",
+      "package_name": "org.telegram.messenger",
       "display_name": "Telegram",
       "publisher": "Telegram FZ LLC",
       "category": "social_media",
@@ -364,7 +257,7 @@
       "notes": ""
     },
     {
-      "package_name": "com.lyft.android",
+      "package_name": "me.lyft.android",
       "display_name": "Lyft",
       "publisher": "Lyft Inc",
       "category": "navigation",
@@ -375,15 +268,15 @@
       "package_name": "com.ubercab.eats",
       "display_name": "Uber Eats",
       "publisher": "Uber Technologies",
-      "category": "navigation",
+      "category": "food_delivery",
       "category_risk_tier": 1,
       "notes": ""
     },
     {
-      "package_name": "com.doordash.driverapp",
+      "package_name": "com.dd.doordash",
       "display_name": "DoorDash",
       "publisher": "DoorDash Inc",
-      "category": "navigation",
+      "category": "food_delivery",
       "category_risk_tier": 1,
       "notes": ""
     },
@@ -391,15 +284,15 @@
       "package_name": "com.grubhub.android",
       "display_name": "Grubhub",
       "publisher": "Grubhub Inc",
-      "category": "navigation",
+      "category": "food_delivery",
       "category_risk_tier": 1,
       "notes": ""
     },
     {
-      "package_name": "com.instacart.shopper",
+      "package_name": "com.instacart.client",
       "display_name": "Instacart",
       "publisher": "Maplebear Inc",
-      "category": "navigation",
+      "category": "food_delivery",
       "category_risk_tier": 1,
       "notes": ""
     },
@@ -500,7 +393,7 @@
       "notes": "Free flashlight utility apps have historically been flagged for requesting location and device permissions far beyond what is required for their stated function."
     },
     {
-      "package_name": "com.speedtest.net",
+      "package_name": "org.zwanoo.android.speedtest",
       "display_name": "Speedtest by Ookla",
       "publisher": "Ziff Davis",
       "category": "free_utility",
@@ -607,38 +500,6 @@
       "package_name": "com.etsy.android",
       "display_name": "Etsy",
       "publisher": "Etsy Inc",
-      "category": "retail",
-      "category_risk_tier": 2,
-      "notes": ""
-    },
-    {
-      "package_name": "com.wish.android",
-      "display_name": "Wish",
-      "publisher": "ContextLogic",
-      "category": "retail",
-      "category_risk_tier": 3,
-      "notes": "App has been associated with extensive data collection practices and has been removed from app stores in certain jurisdictions for privacy-related concerns."
-    },
-    {
-      "package_name": "com.shein.intl",
-      "display_name": "SHEIN",
-      "publisher": "SHEIN Group",
-      "category": "retail",
-      "category_risk_tier": 3,
-      "notes": "App has been associated with extensive device data collection practices beyond what is required for retail functionality. Publisher has faced regulatory scrutiny in multiple jurisdictions."
-    },
-    {
-      "package_name": "com.temu.android",
-      "display_name": "Temu",
-      "publisher": "PDD Holdings",
-      "category": "retail",
-      "category_risk_tier": 3,
-      "notes": "App has been associated with broad device permission requests and data collection practices. Publisher has faced scrutiny related to data handling and potential third-party data sharing."
-    },
-    {
-      "package_name": "com.aliexpress.revolutionary",
-      "display_name": "AliExpress",
-      "publisher": "Alibaba",
       "category": "retail",
       "category_risk_tier": 2,
       "notes": ""
@@ -756,7 +617,7 @@
       "notes": ""
     },
     {
-      "package_name": "com.bbc.news.android",
+      "package_name": "bbc.mobile.news.ww",
       "display_name": "BBC News",
       "publisher": "BBC",
       "category": "news",
@@ -764,7 +625,7 @@
       "notes": ""
     },
     {
-      "package_name": "com.flipboard.app",
+      "package_name": "flipboard.app",
       "display_name": "Flipboard",
       "publisher": "Flipboard Inc",
       "category": "news",
@@ -772,7 +633,7 @@
       "notes": ""
     },
     {
-      "package_name": "com.smartnews.smartnewsapp",
+      "package_name": "jp.gocro.smartnews.android",
       "display_name": "SmartNews",
       "publisher": "SmartNews Inc",
       "category": "news",
@@ -791,31 +652,15 @@
       "package_name": "com.chase.sig.android",
       "display_name": "Chase Mobile",
       "publisher": "JPMorgan Chase",
-      "category": "banking",
+      "category": "finance",
       "category_risk_tier": 1,
       "notes": ""
     },
     {
-      "package_name": "com.bankofamerica.mobile",
-      "display_name": "Bank of America",
-      "publisher": "Bank of America",
-      "category": "banking",
-      "category_risk_tier": 1,
-      "notes": ""
-    },
-    {
-      "package_name": "com.wellsfargo.mobile",
+      "package_name": "com.wf.wellsfargomobile",
       "display_name": "Wells Fargo",
       "publisher": "Wells Fargo",
-      "category": "banking",
-      "category_risk_tier": 1,
-      "notes": ""
-    },
-    {
-      "package_name": "com.citibank.mobile",
-      "display_name": "Citi Mobile",
-      "publisher": "Citibank",
-      "category": "banking",
+      "category": "finance",
       "category_risk_tier": 1,
       "notes": ""
     },
@@ -823,7 +668,7 @@
       "package_name": "com.usaa.mobile.android.usaa",
       "display_name": "USAA Mobile",
       "publisher": "USAA",
-      "category": "banking",
+      "category": "finance",
       "category_risk_tier": 1,
       "notes": ""
     },
@@ -831,7 +676,7 @@
       "package_name": "com.paypal.android.p2pmobile",
       "display_name": "PayPal",
       "publisher": "PayPal Holdings",
-      "category": "banking",
+      "category": "finance",
       "category_risk_tier": 1,
       "notes": ""
     },
@@ -839,7 +684,7 @@
       "package_name": "com.squareup.cash",
       "display_name": "Cash App",
       "publisher": "Block Inc",
-      "category": "banking",
+      "category": "finance",
       "category_risk_tier": 1,
       "notes": ""
     },
@@ -847,7 +692,7 @@
       "package_name": "com.venmo",
       "display_name": "Venmo",
       "publisher": "PayPal Holdings",
-      "category": "banking",
+      "category": "finance",
       "category_risk_tier": 1,
       "notes": ""
     },
@@ -855,7 +700,7 @@
       "package_name": "com.robinhood.android",
       "display_name": "Robinhood",
       "publisher": "Robinhood Markets",
-      "category": "banking",
+      "category": "finance",
       "category_risk_tier": 1,
       "notes": ""
     },
@@ -863,31 +708,7 @@
       "package_name": "com.coinbase.android",
       "display_name": "Coinbase",
       "publisher": "Coinbase Inc",
-      "category": "banking",
-      "category_risk_tier": 1,
-      "notes": ""
-    },
-    {
-      "package_name": "com.ally.banking",
-      "display_name": "Ally Bank",
-      "publisher": "Ally Financial",
-      "category": "banking",
-      "category_risk_tier": 1,
-      "notes": ""
-    },
-    {
-      "package_name": "com.chime.banking",
-      "display_name": "Chime",
-      "publisher": "Chime Financial",
-      "category": "banking",
-      "category_risk_tier": 1,
-      "notes": ""
-    },
-    {
-      "package_name": "com.zelle",
-      "display_name": "Zelle",
-      "publisher": "Early Warning",
-      "category": "banking",
+      "category": "finance",
       "category_risk_tier": 1,
       "notes": ""
     },
@@ -932,7 +753,7 @@
       "notes": ""
     },
     {
-      "package_name": "com.adidas.runtastic",
+      "package_name": "com.runtastic.android",
       "display_name": "Runtastic",
       "publisher": "Adidas",
       "category": "health",
@@ -948,7 +769,7 @@
       "notes": ""
     },
     {
-      "package_name": "com.headspace.android",
+      "package_name": "com.getsomeheadspace.android",
       "display_name": "Headspace",
       "publisher": "Headspace Inc",
       "category": "health",
@@ -956,7 +777,7 @@
       "notes": ""
     },
     {
-      "package_name": "com.noom.android",
+      "package_name": "com.wsl.noom",
       "display_name": "Noom",
       "publisher": "Noom Inc",
       "category": "health",
@@ -972,7 +793,7 @@
       "notes": ""
     },
     {
-      "package_name": "com.peloton.android",
+      "package_name": "com.onepeloton.callable",
       "display_name": "Peloton",
       "publisher": "Peloton Interactive",
       "category": "health",
@@ -1004,7 +825,7 @@
       "notes": ""
     },
     {
-      "package_name": "com.slack",
+      "package_name": "com.Slack",
       "display_name": "Slack",
       "publisher": "Salesforce",
       "category": "productivity",
@@ -1012,7 +833,7 @@
       "notes": ""
     },
     {
-      "package_name": "com.google.android.apps.docs",
+      "package_name": "com.google.android.apps.docs.editors.docs",
       "display_name": "Google Docs",
       "publisher": "Google",
       "category": "productivity",
@@ -1036,7 +857,7 @@
       "notes": ""
     },
     {
-      "package_name": "com.notion.id",
+      "package_name": "notion.id",
       "display_name": "Notion",
       "publisher": "Notion Labs",
       "category": "productivity",
@@ -1079,14 +900,6 @@
       "package_name": "com.adobe.reader",
       "display_name": "Adobe Acrobat",
       "publisher": "Adobe Inc",
-      "category": "productivity",
-      "category_risk_tier": 1,
-      "notes": ""
-    },
-    {
-      "package_name": "com.zoom.us",
-      "display_name": "Zoom",
-      "publisher": "Zoom Video",
       "category": "productivity",
       "category_risk_tier": 1,
       "notes": ""
@@ -1287,7 +1100,7 @@
       "package_name": "com.tinder",
       "display_name": "Tinder",
       "publisher": "Match Group",
-      "category": "social_media",
+      "category": "dating",
       "category_risk_tier": 3,
       "notes": "Dating apps collect precise location data as a core function. Apps in this category have historically been associated with sharing location and personal data with third-party advertisers and data brokers."
     },
@@ -1295,7 +1108,7 @@
       "package_name": "com.bumble.app",
       "display_name": "Bumble",
       "publisher": "Bumble Inc",
-      "category": "social_media",
+      "category": "dating",
       "category_risk_tier": 3,
       "notes": "Dating apps collect precise location data as a core function. Apps in this category have historically been associated with sharing location and personal data with third-party advertisers and data brokers."
     },
@@ -1303,23 +1116,23 @@
       "package_name": "com.okcupid.okcupid",
       "display_name": "OkCupid",
       "publisher": "Match Group",
-      "category": "social_media",
+      "category": "dating",
       "category_risk_tier": 3,
       "notes": "Dating apps collect precise location data as a core function. Apps in this category have historically been associated with sharing location and personal data with third-party advertisers and data brokers."
     },
     {
-      "package_name": "com.grindr.android",
+      "package_name": "com.grindrapp.android",
       "display_name": "Grindr",
       "publisher": "San Vicente",
-      "category": "social_media",
+      "category": "dating",
       "category_risk_tier": 3,
       "notes": "App has been subject to regulatory investigations and public reporting related to sharing precise location and sensitive personal data with third-party advertisers."
     },
     {
-      "package_name": "com.hinge.app",
+      "package_name": "co.hinge.app",
       "display_name": "Hinge",
       "publisher": "Match Group",
-      "category": "social_media",
+      "category": "dating",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1327,7 +1140,7 @@
       "package_name": "com.netflix.mediaclient",
       "display_name": "Netflix",
       "publisher": "Netflix Inc",
-      "category": "news",
+      "category": "streaming",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1335,7 +1148,7 @@
       "package_name": "com.spotify.music",
       "display_name": "Spotify",
       "publisher": "Spotify AB",
-      "category": "news",
+      "category": "streaming",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1343,7 +1156,7 @@
       "package_name": "com.google.android.youtube",
       "display_name": "YouTube",
       "publisher": "Google",
-      "category": "news",
+      "category": "streaming",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1351,7 +1164,7 @@
       "package_name": "com.amazon.avod.thirdpartyclient",
       "display_name": "Amazon Prime Video",
       "publisher": "Amazon",
-      "category": "news",
+      "category": "streaming",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1359,15 +1172,15 @@
       "package_name": "com.disney.disneyplus",
       "display_name": "Disney+",
       "publisher": "The Walt Disney Co",
-      "category": "news",
+      "category": "streaming",
       "category_risk_tier": 2,
       "notes": ""
     },
     {
-      "package_name": "com.hbo.hbonow",
+      "package_name": "com.wbd.stream",
       "display_name": "Max",
       "publisher": "Warner Bros Discovery",
-      "category": "news",
+      "category": "streaming",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1375,7 +1188,7 @@
       "package_name": "com.hulu.plus",
       "display_name": "Hulu",
       "publisher": "Disney / Hulu",
-      "category": "news",
+      "category": "streaming",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1383,7 +1196,7 @@
       "package_name": "com.apple.android.music",
       "display_name": "Apple Music",
       "publisher": "Apple",
-      "category": "news",
+      "category": "streaming",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1391,7 +1204,7 @@
       "package_name": "com.pandora.android",
       "display_name": "Pandora",
       "publisher": "SiriusXM",
-      "category": "news",
+      "category": "streaming",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1399,23 +1212,23 @@
       "package_name": "com.soundcloud.android",
       "display_name": "SoundCloud",
       "publisher": "SoundCloud Ltd",
-      "category": "news",
+      "category": "streaming",
       "category_risk_tier": 2,
       "notes": ""
     },
     {
-      "package_name": "com.twitch.android.viewer",
+      "package_name": "tv.twitch.android.app",
       "display_name": "Twitch",
       "publisher": "Amazon",
-      "category": "news",
+      "category": "streaming",
       "category_risk_tier": 2,
       "notes": ""
     },
     {
-      "package_name": "com.youtube.music",
+      "package_name": "com.google.android.apps.youtube.music",
       "display_name": "YouTube Music",
       "publisher": "Google",
-      "category": "news",
+      "category": "streaming",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1423,7 +1236,7 @@
       "package_name": "com.airbnb.android",
       "display_name": "Airbnb",
       "publisher": "Airbnb Inc",
-      "category": "navigation",
+      "category": "travel",
       "category_risk_tier": 1,
       "notes": ""
     },
@@ -1431,7 +1244,7 @@
       "package_name": "com.expedia.bookings",
       "display_name": "Expedia",
       "publisher": "Expedia Group",
-      "category": "retail",
+      "category": "travel",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1439,7 +1252,7 @@
       "package_name": "com.hotels.android",
       "display_name": "Hotels.com",
       "publisher": "Expedia Group",
-      "category": "retail",
+      "category": "travel",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1447,7 +1260,7 @@
       "package_name": "com.kayak.android",
       "display_name": "Kayak",
       "publisher": "Booking Holdings",
-      "category": "retail",
+      "category": "travel",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1455,7 +1268,7 @@
       "package_name": "com.tripadvisor.tripadvisor",
       "display_name": "TripAdvisor",
       "publisher": "Tripadvisor Inc",
-      "category": "retail",
+      "category": "travel",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1463,7 +1276,7 @@
       "package_name": "com.aa.android",
       "display_name": "American Airlines",
       "publisher": "American Airlines",
-      "category": "navigation",
+      "category": "travel",
       "category_risk_tier": 1,
       "notes": ""
     },
@@ -1471,7 +1284,7 @@
       "package_name": "com.delta",
       "display_name": "Fly Delta",
       "publisher": "Delta Air Lines",
-      "category": "navigation",
+      "category": "travel",
       "category_risk_tier": 1,
       "notes": ""
     },
@@ -1479,7 +1292,7 @@
       "package_name": "com.united.mobile.android",
       "display_name": "United Airlines",
       "publisher": "United Airlines",
-      "category": "navigation",
+      "category": "travel",
       "category_risk_tier": 1,
       "notes": ""
     },
@@ -1487,15 +1300,7 @@
       "package_name": "com.starbucks.mobilecard",
       "display_name": "Starbucks",
       "publisher": "Starbucks Corp",
-      "category": "retail",
-      "category_risk_tier": 2,
-      "notes": ""
-    },
-    {
-      "package_name": "com.mcdonalds.mobileapp",
-      "display_name": "McDonald's",
-      "publisher": "McDonald's Corp",
-      "category": "retail",
+      "category": "food_restaurant",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1503,31 +1308,23 @@
       "package_name": "com.yelp.android",
       "display_name": "Yelp",
       "publisher": "Yelp Inc",
-      "category": "retail",
+      "category": "food_restaurant",
       "category_risk_tier": 2,
       "notes": ""
     },
     {
-      "package_name": "com.opentable.android",
+      "package_name": "com.opentable",
       "display_name": "OpenTable",
       "publisher": "Booking Holdings",
-      "category": "retail",
+      "category": "food_restaurant",
       "category_risk_tier": 2,
       "notes": ""
     },
     {
-      "package_name": "com.pizzahut.mobileapp",
-      "display_name": "Pizza Hut",
-      "publisher": "Yum! Brands",
-      "category": "retail",
-      "category_risk_tier": 2,
-      "notes": ""
-    },
-    {
-      "package_name": "com.dominos.dom",
+      "package_name": "com.dominospizza",
       "display_name": "Domino's",
       "publisher": "Domino's Pizza",
-      "category": "retail",
+      "category": "food_restaurant",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1535,7 +1332,7 @@
       "package_name": "com.chipotle.ordering",
       "display_name": "Chipotle",
       "publisher": "Chipotle Mexican",
-      "category": "retail",
+      "category": "food_restaurant",
       "category_risk_tier": 2,
       "notes": ""
     },
@@ -1660,14 +1457,6 @@
       "notes": "AI photo editor requiring camera access"
     },
     {
-      "package_name": "com.amazon.mShoppingApp",
-      "display_name": "Amazon Shopping",
-      "publisher": "Amazon",
-      "category": "shopping",
-      "category_risk_tier": 2,
-      "notes": "Major retailer with location and camera for AR features"
-    },
-    {
       "package_name": "com.einnovation.temu",
       "display_name": "Temu",
       "publisher": "PDD Holdings",
@@ -1692,28 +1481,12 @@
       "notes": "Shopping and order tracking app"
     },
     {
-      "package_name": "com.wish.shopping",
-      "display_name": "Wish",
-      "publisher": "ContextLogic",
-      "category": "shopping",
-      "category_risk_tier": 2,
-      "notes": "Discount shopping app"
-    },
-    {
       "package_name": "com.alibaba.aliexpresshd",
       "display_name": "AliExpress",
       "publisher": "Alibaba",
       "category": "shopping",
       "category_risk_tier": 2,
       "notes": "International marketplace with data collection practices"
-    },
-    {
-      "package_name": "com.costco.app.android",
-      "display_name": "Costco",
-      "publisher": "Costco",
-      "category": "shopping",
-      "category_risk_tier": 2,
-      "notes": "Retail membership app with location"
     },
     {
       "package_name": "com.nike.omega",
@@ -1780,7 +1553,7 @@
       "notes": "Bank transfer app"
     },
     {
-      "package_name": "com.kraken.trade",
+      "package_name": "com.kraken.invest.app",
       "display_name": "Kraken",
       "publisher": "Payward",
       "category": "finance",
@@ -1794,14 +1567,6 @@
       "category": "finance",
       "category_risk_tier": 2,
       "notes": "Crypto exchange with identity verification"
-    },
-    {
-      "package_name": "com.chime.mobile",
-      "display_name": "Chime",
-      "publisher": "Chime",
-      "category": "finance",
-      "category_risk_tier": 2,
-      "notes": "Online bank with location and camera for check deposit"
     },
     {
       "package_name": "com.sofi.android",
@@ -1868,7 +1633,7 @@
       "notes": "Business finance app"
     },
     {
-      "package_name": "com.turbotax.mobile",
+      "package_name": "com.intuit.turbotax.mobile",
       "display_name": "TurboTax",
       "publisher": "Intuit",
       "category": "finance",
@@ -1882,14 +1647,6 @@
       "category": "finance",
       "category_risk_tier": 2,
       "notes": "Tax filing app"
-    },
-    {
-      "package_name": "com.ally.mobile",
-      "display_name": "Ally Bank",
-      "publisher": "Ally Financial",
-      "category": "finance",
-      "category_risk_tier": 2,
-      "notes": "Online bank with camera for check deposit"
     },
     {
       "package_name": "com.discover.dcapp",
@@ -1906,22 +1663,6 @@
       "category": "finance",
       "category_risk_tier": 2,
       "notes": "Credit card app with location"
-    },
-    {
-      "package_name": "com.bankofamerica.connect",
-      "display_name": "Bank of America",
-      "publisher": "Bank of America",
-      "category": "finance",
-      "category_risk_tier": 2,
-      "notes": "Banking app with camera and location"
-    },
-    {
-      "package_name": "com.citibank.mobile.au",
-      "display_name": "Citi Mobile",
-      "publisher": "Citibank",
-      "category": "finance",
-      "category_risk_tier": 2,
-      "notes": "Banking app"
     },
     {
       "package_name": "com.tdbank",
@@ -1964,7 +1705,7 @@
       "notes": "Restaurant app with location for ordering and offers"
     },
     {
-      "package_name": "com.dominos",
+      "package_name": "com.dominospizza",
       "display_name": "Domino's Pizza",
       "publisher": "Domino's",
       "category": "food_restaurant",
@@ -1972,15 +1713,7 @@
       "notes": "Pizza delivery app with location tracking"
     },
     {
-      "package_name": "com.pizzahut.order",
-      "display_name": "Pizza Hut",
-      "publisher": "Pizza Hut",
-      "category": "food_restaurant",
-      "category_risk_tier": 2,
-      "notes": "Pizza delivery app with location"
-    },
-    {
-      "package_name": "com.tacobell.android.activity",
+      "package_name": "com.tacobell.ordering",
       "display_name": "Taco Bell",
       "publisher": "Taco Bell",
       "category": "food_restaurant",
@@ -2012,7 +1745,7 @@
       "notes": "Restaurant app with location"
     },
     {
-      "package_name": "com.burgerking.app.android",
+      "package_name": "com.emn8.mobilem8.nativeapp.bk",
       "display_name": "Burger King",
       "publisher": "Burger King",
       "category": "food_restaurant",
@@ -2020,7 +1753,7 @@
       "notes": "Restaurant app with location"
     },
     {
-      "package_name": "com.chick-fil-a.truett.cathy",
+      "package_name": "com.chickfila.cfaflagship",
       "display_name": "Chick-fil-A",
       "publisher": "Chick-fil-A",
       "category": "food_restaurant",
@@ -2028,7 +1761,7 @@
       "notes": "Restaurant app with location"
     },
     {
-      "package_name": "com.panera.android",
+      "package_name": "com.panera.bread",
       "display_name": "Panera Bread",
       "publisher": "Panera Bread",
       "category": "food_restaurant",
@@ -2036,7 +1769,7 @@
       "notes": "Restaurant app with location"
     },
     {
-      "package_name": "com.yum.kfc",
+      "package_name": "com.kfc.us.mobile",
       "display_name": "KFC",
       "publisher": "Yum! Brands",
       "category": "food_restaurant",
@@ -2154,6 +1887,1953 @@
       "category": "system_service",
       "category_risk_tier": 1,
       "notes": "System service related to media playback and content rendering. Location access, if present, supports location-based content or service availability features. This is a background system component with no standalone user interface. Revoking permissions may affect media playback or related system functionality."
+    },
+    {
+      "package_name": "com.yum.pizzahut",
+      "display_name": "Pizza Hut",
+      "publisher": "Yum! Brands",
+      "category": "food_restaurant",
+      "category_risk_tier": 2,
+      "notes": "Restaurant ordering app; location for delivery and store finder"
+    },
+    {
+      "package_name": "com.contextlogic.wish",
+      "display_name": "Wish",
+      "publisher": "ContextLogic",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Discount marketplace; location may be used for shipping and ad targeting"
+    },
+    {
+      "package_name": "com.infonow.bofa",
+      "display_name": "Bank of America",
+      "publisher": "Bank of America",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Major US bank; camera for check deposit, location for ATM finder and fraud detection"
+    },
+    {
+      "package_name": "com.citi.citimobile",
+      "display_name": "Citi Mobile",
+      "publisher": "Citigroup",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Major US bank; camera for check deposit, location for ATM/fraud"
+    },
+    {
+      "package_name": "com.onedebit.chime",
+      "display_name": "Chime",
+      "publisher": "Chime Financial",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Mobile-first bank; camera for check deposit and identity verification"
+    },
+    {
+      "package_name": "com.ally.MobileBanking",
+      "display_name": "Ally Bank",
+      "publisher": "Ally Financial",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Online bank; camera for mobile check deposit"
+    },
+    {
+      "package_name": "com.garmin.android.apps.connectmobile",
+      "display_name": "Garmin Connect",
+      "publisher": "Garmin",
+      "category": "fitness",
+      "category_risk_tier": 2,
+      "notes": "Fitness device companion; precise location and health data for tracking workouts"
+    },
+    {
+      "package_name": "com.weightwatchers.weightwatchers",
+      "display_name": "WW (Weight Watchers)",
+      "publisher": "WW International",
+      "category": "fitness",
+      "category_risk_tier": 2,
+      "notes": "Diet/wellness tracker; camera for food logging and barcode scanning"
+    },
+    {
+      "package_name": "com.fitnow.loseit",
+      "display_name": "Lose It!",
+      "publisher": "FitNow",
+      "category": "fitness",
+      "category_risk_tier": 2,
+      "notes": "Diet tracker; camera for food photos and barcode scanning"
+    },
+    {
+      "package_name": "com.mapmyfitness.android2",
+      "display_name": "MapMyRun",
+      "publisher": "Under Armour",
+      "category": "fitness",
+      "category_risk_tier": 2,
+      "notes": "Running tracker; precise location for route mapping"
+    },
+    {
+      "package_name": "com.ouraring.oura",
+      "display_name": "Oura",
+      "publisher": "Oura Health",
+      "category": "fitness",
+      "category_risk_tier": 2,
+      "notes": "Health ring companion; collects sleep, heart rate, and biometric data"
+    },
+    {
+      "package_name": "com.match.android.matchmobile",
+      "display_name": "Match",
+      "publisher": "Match Group",
+      "category": "dating",
+      "category_risk_tier": 3,
+      "notes": "Dating app; location used for proximity matching, profile data is sensitive"
+    },
+    {
+      "package_name": "com.pof.android",
+      "display_name": "Plenty of Fish",
+      "publisher": "Plenty of Fish Media",
+      "category": "dating",
+      "category_risk_tier": 3,
+      "notes": "Dating app; location used for proximity matching"
+    },
+    {
+      "package_name": "com.weareher.her",
+      "display_name": "Her",
+      "publisher": "HER Social App",
+      "category": "dating",
+      "category_risk_tier": 3,
+      "notes": "LGBTQ+ dating app; location used for proximity matching, profile data is sensitive"
+    },
+    {
+      "package_name": "com.zoosk.zoosk",
+      "display_name": "Zoosk",
+      "publisher": "Zoosk",
+      "category": "dating",
+      "category_risk_tier": 3,
+      "notes": "Dating app; location used for proximity matching"
+    },
+    {
+      "package_name": "com.eharmony",
+      "display_name": "eHarmony",
+      "publisher": "eharmony",
+      "category": "dating",
+      "category_risk_tier": 3,
+      "notes": "Dating app; profile data including personality assessments is sensitive"
+    },
+    {
+      "package_name": "com.teslamotors.tesla",
+      "display_name": "Tesla",
+      "publisher": "Tesla",
+      "category": "automotive",
+      "category_risk_tier": 2,
+      "notes": "Vehicle companion app; precise location for vehicle tracking, remote control features"
+    },
+    {
+      "package_name": "com.ringapp",
+      "display_name": "Ring",
+      "publisher": "Ring (Amazon)",
+      "category": "smart_home",
+      "category_risk_tier": 3,
+      "notes": "Video doorbell/security; camera and microphone access, location for geofencing"
+    },
+    {
+      "package_name": "com.google.android.apps.chromecast.app",
+      "display_name": "Google Home",
+      "publisher": "Google",
+      "category": "smart_home",
+      "category_risk_tier": 2,
+      "notes": "Smart home hub; controls cameras, speakers, and connected devices"
+    },
+    {
+      "package_name": "com.samsung.android.oneconnect",
+      "display_name": "SmartThings",
+      "publisher": "Samsung",
+      "category": "smart_home",
+      "category_risk_tier": 2,
+      "notes": "Smart home hub; controls connected devices and may use location for automation"
+    },
+    {
+      "package_name": "com.hualai",
+      "display_name": "Wyze",
+      "publisher": "Wyze Labs",
+      "category": "smart_home",
+      "category_risk_tier": 3,
+      "notes": "Smart home camera/sensors; camera and microphone, cloud-based video"
+    },
+    {
+      "package_name": "com.philips.lighting.hue2",
+      "display_name": "Philips Hue",
+      "publisher": "Signify",
+      "category": "smart_home",
+      "category_risk_tier": 1,
+      "notes": "Smart lighting controller; location may be used for automation triggers"
+    },
+    {
+      "package_name": "com.nordvpn.android",
+      "display_name": "NordVPN",
+      "publisher": "Nord Security",
+      "category": "vpn",
+      "category_risk_tier": 1,
+      "notes": "Commercial VPN; routes network traffic through provider servers"
+    },
+    {
+      "package_name": "com.expressvpn.vpn",
+      "display_name": "ExpressVPN",
+      "publisher": "Express Technologies",
+      "category": "vpn",
+      "category_risk_tier": 1,
+      "notes": "Commercial VPN; routes network traffic through provider servers"
+    },
+    {
+      "package_name": "ch.protonvpn.android",
+      "display_name": "Proton VPN",
+      "publisher": "Proton AG",
+      "category": "vpn",
+      "category_risk_tier": 1,
+      "notes": "Privacy-focused VPN; Swiss jurisdiction, no-logs claim"
+    },
+    {
+      "package_name": "com.privateinternetaccess.android",
+      "display_name": "Private Internet Access",
+      "publisher": "Private Internet Access",
+      "category": "vpn",
+      "category_risk_tier": 1,
+      "notes": "Commercial VPN; routes network traffic through provider servers"
+    },
+    {
+      "package_name": "com.surfshark.vpnclient.android",
+      "display_name": "Surfshark",
+      "publisher": "Surfshark",
+      "category": "vpn",
+      "category_risk_tier": 1,
+      "notes": "Commercial VPN; routes network traffic through provider servers"
+    },
+    {
+      "package_name": "de.mobileconcepts.cyberghost",
+      "display_name": "CyberGhost VPN",
+      "publisher": "CyberGhost",
+      "category": "vpn",
+      "category_risk_tier": 1,
+      "notes": "Commercial VPN; routes network traffic through provider servers"
+    },
+    {
+      "package_name": "com.tunnelbear.android",
+      "display_name": "TunnelBear",
+      "publisher": "TunnelBear",
+      "category": "vpn",
+      "category_risk_tier": 1,
+      "notes": "Commercial VPN with limited free tier"
+    },
+    {
+      "package_name": "hotspotshield.android.vpn",
+      "display_name": "Hotspot Shield",
+      "publisher": "Aura/Pango",
+      "category": "vpn",
+      "category_risk_tier": 2,
+      "notes": "Commercial VPN; free tier may include ad-supported tracking"
+    },
+    {
+      "package_name": "net.mullvad.mullvadvpn",
+      "display_name": "Mullvad VPN",
+      "publisher": "Mullvad",
+      "category": "vpn",
+      "category_risk_tier": 1,
+      "notes": "Privacy-focused VPN; anonymous account model"
+    },
+    {
+      "package_name": "com.agilebits.onepassword",
+      "display_name": "1Password",
+      "publisher": "AgileBits",
+      "category": "vpn",
+      "category_risk_tier": 1,
+      "notes": "Password manager; stores credentials and sensitive data"
+    },
+    {
+      "package_name": "com.lastpass.lpandroid",
+      "display_name": "LastPass",
+      "publisher": "LastPass",
+      "category": "vpn",
+      "category_risk_tier": 2,
+      "notes": "Password manager; has experienced security incidents"
+    },
+    {
+      "package_name": "com.x8bit.bitwarden",
+      "display_name": "Bitwarden",
+      "publisher": "Bitwarden",
+      "category": "vpn",
+      "category_risk_tier": 1,
+      "notes": "Open-source password manager"
+    },
+    {
+      "package_name": "com.peacocktv.peacockandroid",
+      "display_name": "Peacock",
+      "publisher": "NBCUniversal",
+      "category": "streaming",
+      "category_risk_tier": 2,
+      "notes": "Streaming service; account profile and viewing data"
+    },
+    {
+      "package_name": "com.aspiro.tidal",
+      "display_name": "Tidal",
+      "publisher": "Block (Square)",
+      "category": "streaming",
+      "category_risk_tier": 2,
+      "notes": "Music streaming; account profile and listening data"
+    },
+    {
+      "package_name": "deezer.android.app",
+      "display_name": "Deezer",
+      "publisher": "Deezer",
+      "category": "streaming",
+      "category_risk_tier": 2,
+      "notes": "Music streaming; account profile and listening data"
+    },
+    {
+      "package_name": "com.espn.score_center",
+      "display_name": "ESPN",
+      "publisher": "ESPN/Disney",
+      "category": "streaming",
+      "category_risk_tier": 2,
+      "notes": "Sports content and live streaming"
+    },
+    {
+      "package_name": "com.microsoft.office.powerpoint",
+      "display_name": "Microsoft PowerPoint",
+      "publisher": "Microsoft",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Presentation app; account-tied document storage"
+    },
+    {
+      "package_name": "com.google.android.apps.docs.editors.sheets",
+      "display_name": "Google Sheets",
+      "publisher": "Google",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Spreadsheet app; account-tied cloud storage"
+    },
+    {
+      "package_name": "com.google.android.apps.docs.editors.slides",
+      "display_name": "Google Slides",
+      "publisher": "Google",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Presentation app; account-tied cloud storage"
+    },
+    {
+      "package_name": "com.asana.app",
+      "display_name": "Asana",
+      "publisher": "Asana",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Project management; account-tied workspace data"
+    },
+    {
+      "package_name": "com.trello",
+      "display_name": "Trello",
+      "publisher": "Atlassian",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Kanban project management; account-tied workspace data"
+    },
+    {
+      "package_name": "com.docusign.ink",
+      "display_name": "DocuSign",
+      "publisher": "DocuSign",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "E-signature; camera for document scanning, sensitive contract data"
+    },
+    {
+      "package_name": "com.dominos.driver.app",
+      "display_name": "Domino's Delivery Experience",
+      "publisher": "Domino's Pizza",
+      "category": "food_delivery",
+      "category_risk_tier": 2,
+      "notes": "Domino's driver-facing app; precise location for delivery routing"
+    },
+    {
+      "package_name": "com.brave.browser",
+      "display_name": "Brave Browser",
+      "publisher": "Brave Software",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Privacy-focused web browser with built-in tracker blocking"
+    },
+    {
+      "package_name": "com.opera.browser",
+      "display_name": "Opera Browser",
+      "publisher": "Opera",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Web browser with built-in VPN feature"
+    },
+    {
+      "package_name": "com.microsoft.emmx",
+      "display_name": "Microsoft Edge",
+      "publisher": "Microsoft",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Web browser; account-tied sync data"
+    },
+    {
+      "package_name": "com.sec.android.app.sbrowser",
+      "display_name": "Samsung Internet",
+      "publisher": "Samsung",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Samsung's web browser; pre-installed on Samsung devices"
+    },
+    {
+      "package_name": "com.vivaldi.browser",
+      "display_name": "Vivaldi Browser",
+      "publisher": "Vivaldi Technologies",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Customizable web browser focused on power users"
+    },
+    {
+      "package_name": "com.google.android.apps.docs.drive",
+      "display_name": "Google Drive",
+      "publisher": "Google",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Cloud storage; account-tied files and documents"
+    },
+    {
+      "package_name": "com.microsoft.skydrive",
+      "display_name": "Microsoft OneDrive",
+      "publisher": "Microsoft",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Cloud storage; account-tied files and documents"
+    },
+    {
+      "package_name": "mega.privacy.android.app",
+      "display_name": "MEGA",
+      "publisher": "MEGA Limited",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "End-to-end encrypted cloud storage"
+    },
+    {
+      "package_name": "com.tencent.mm",
+      "display_name": "WeChat",
+      "publisher": "Tencent",
+      "category": "messaging",
+      "category_risk_tier": 3,
+      "notes": "Chinese super-app; messaging, payments, and social features under PRC jurisdiction"
+    },
+    {
+      "package_name": "jp.naver.line.android",
+      "display_name": "LINE",
+      "publisher": "LINE Corporation",
+      "category": "messaging",
+      "category_risk_tier": 2,
+      "notes": "Messaging app popular in Japan and Southeast Asia"
+    },
+    {
+      "package_name": "com.kakao.talk",
+      "display_name": "KakaoTalk",
+      "publisher": "Kakao Corp",
+      "category": "messaging",
+      "category_risk_tier": 2,
+      "notes": "Messaging app popular in South Korea"
+    },
+    {
+      "package_name": "com.imo.android.imoim",
+      "display_name": "imo",
+      "publisher": "PageBites",
+      "category": "messaging",
+      "category_risk_tier": 2,
+      "notes": "Cross-platform messaging and video calling"
+    },
+    {
+      "package_name": "com.groupme.android",
+      "display_name": "GroupMe",
+      "publisher": "Microsoft (Skype)",
+      "category": "messaging",
+      "category_risk_tier": 1,
+      "notes": "Group messaging app"
+    },
+    {
+      "package_name": "com.skype.raider",
+      "display_name": "Skype",
+      "publisher": "Microsoft",
+      "category": "messaging",
+      "category_risk_tier": 2,
+      "notes": "Voice and video calling; microphone and camera access"
+    },
+    {
+      "package_name": "ch.protonmail.android.android",
+      "display_name": "Proton Mail",
+      "publisher": "Proton AG",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Privacy-focused encrypted email"
+    },
+    {
+      "package_name": "com.yahoo.mobile.client.android.mail",
+      "display_name": "Yahoo Mail",
+      "publisher": "Yahoo",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Email client; account-tied messaging and calendar"
+    },
+    {
+      "package_name": "com.lemon.lvoverseas",
+      "display_name": "CapCut",
+      "publisher": "ByteDance",
+      "category": "photo_video",
+      "category_risk_tier": 3,
+      "notes": "Video editor by ByteDance (TikTok parent); media access and PRC jurisdiction"
+    },
+    {
+      "package_name": "com.vsco.cam",
+      "display_name": "VSCO",
+      "publisher": "VSCO",
+      "category": "photo_video",
+      "category_risk_tier": 2,
+      "notes": "Photo editor and social network; camera and storage access"
+    },
+    {
+      "package_name": "com.adobe.lrmobile",
+      "display_name": "Adobe Lightroom",
+      "publisher": "Adobe",
+      "category": "photo_video",
+      "category_risk_tier": 2,
+      "notes": "Photo editor; cloud sync of images"
+    },
+    {
+      "package_name": "com.adobe.psmobile",
+      "display_name": "Photoshop Express",
+      "publisher": "Adobe",
+      "category": "photo_video",
+      "category_risk_tier": 2,
+      "notes": "Photo editor; cloud sync of images"
+    },
+    {
+      "package_name": "com.niksoftware.snapseed",
+      "display_name": "Snapseed",
+      "publisher": "Google",
+      "category": "photo_video",
+      "category_risk_tier": 1,
+      "notes": "Photo editor; local image processing"
+    },
+    {
+      "package_name": "com.picsart.studio",
+      "display_name": "PicsArt",
+      "publisher": "PicsArt",
+      "category": "photo_video",
+      "category_risk_tier": 2,
+      "notes": "Photo and video editor with social features"
+    },
+    {
+      "package_name": "com.duolingo",
+      "display_name": "Duolingo",
+      "publisher": "Duolingo",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Language learning app; account profile data"
+    },
+    {
+      "package_name": "org.khanacademy.android",
+      "display_name": "Khan Academy",
+      "publisher": "Khan Academy",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Educational content platform"
+    },
+    {
+      "package_name": "com.coursera.android",
+      "display_name": "Coursera",
+      "publisher": "Coursera",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Online courses platform"
+    },
+    {
+      "package_name": "com.babbel.mobile.android.en",
+      "display_name": "Babbel",
+      "publisher": "Babbel",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Language learning app; account profile data"
+    },
+    {
+      "package_name": "com.amazon.kindle",
+      "display_name": "Kindle",
+      "publisher": "Amazon",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "E-book reader; reading history tied to Amazon account"
+    },
+    {
+      "package_name": "com.audible.application",
+      "display_name": "Audible",
+      "publisher": "Audible (Amazon)",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Audiobook app; listening data tied to Amazon account"
+    },
+    {
+      "package_name": "com.overdrive.mobile.android.libby",
+      "display_name": "Libby",
+      "publisher": "OverDrive",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Public library e-book app"
+    },
+    {
+      "package_name": "com.goodreads",
+      "display_name": "Goodreads",
+      "publisher": "Amazon",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Book social network; reading history tied to Amazon"
+    },
+    {
+      "package_name": "com.wallet.crypto.trustapp",
+      "display_name": "Trust Wallet",
+      "publisher": "Trust Wallet",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Crypto wallet; private keys stored locally"
+    },
+    {
+      "package_name": "io.metamask",
+      "display_name": "MetaMask",
+      "publisher": "ConsenSys",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Crypto wallet for Ethereum and EVM chains"
+    },
+    {
+      "package_name": "co.bitx.android.wallet",
+      "display_name": "Luno",
+      "publisher": "Luno",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Crypto exchange and wallet"
+    },
+    {
+      "package_name": "com.google.android.apps.authenticator2",
+      "display_name": "Google Authenticator",
+      "publisher": "Google",
+      "category": "vpn",
+      "category_risk_tier": 1,
+      "notes": "TOTP-based two-factor authentication codes"
+    },
+    {
+      "package_name": "com.authy.authy",
+      "display_name": "Authy",
+      "publisher": "Twilio",
+      "category": "vpn",
+      "category_risk_tier": 1,
+      "notes": "TOTP-based two-factor authentication with cloud backup"
+    },
+    {
+      "package_name": "com.azure.authenticator",
+      "display_name": "Microsoft Authenticator",
+      "publisher": "Microsoft",
+      "category": "vpn",
+      "category_risk_tier": 1,
+      "notes": "TOTP and push-based two-factor authentication"
+    },
+    {
+      "package_name": "com.google.android.apps.translate",
+      "display_name": "Google Translate",
+      "publisher": "Google",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Translation app; camera for visual translation, microphone for voice"
+    },
+    {
+      "package_name": "org.wikipedia",
+      "display_name": "Wikipedia",
+      "publisher": "Wikimedia Foundation",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Encyclopedia reader app"
+    },
+    {
+      "package_name": "com.google.android.apps.photos",
+      "display_name": "Google Photos",
+      "publisher": "Google",
+      "category": "photo_video",
+      "category_risk_tier": 2,
+      "notes": "Photo backup and library; cloud-stored images and metadata"
+    },
+    {
+      "package_name": "com.amazon.clouddrive.photos",
+      "display_name": "Amazon Photos",
+      "publisher": "Amazon",
+      "category": "photo_video",
+      "category_risk_tier": 2,
+      "notes": "Photo backup; cloud-stored images and metadata"
+    },
+    {
+      "package_name": "com.booking",
+      "display_name": "Booking.com",
+      "publisher": "Booking Holdings",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "Travel booking; location and payment data"
+    },
+    {
+      "package_name": "com.priceline.android.negotiator",
+      "display_name": "Priceline",
+      "publisher": "Booking Holdings",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "Travel booking; location and payment data"
+    },
+    {
+      "package_name": "com.hopper.mountainview.play",
+      "display_name": "Hopper",
+      "publisher": "Hopper",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "Flight and hotel price tracking"
+    },
+    {
+      "package_name": "com.southwestairlines.mobile",
+      "display_name": "Southwest Airlines",
+      "publisher": "Southwest Airlines",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "Airline app; location for flight tracking and boarding"
+    },
+    {
+      "package_name": "com.britishairways.android",
+      "display_name": "British Airways",
+      "publisher": "British Airways",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "Airline app; location for flight tracking and boarding"
+    },
+    {
+      "package_name": "com.alaskaairlines.android",
+      "display_name": "Alaska Airlines",
+      "publisher": "Alaska Airlines",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "Airline app; location for flight tracking and boarding"
+    },
+    {
+      "package_name": "com.jetblue.JetBlueAndroid",
+      "display_name": "JetBlue",
+      "publisher": "JetBlue Airways",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "Airline app; location for flight tracking and boarding"
+    },
+    {
+      "package_name": "com.spirit.customerapp",
+      "display_name": "Spirit Airlines",
+      "publisher": "Spirit Airlines",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "Airline app; location for flight tracking and boarding"
+    },
+    {
+      "package_name": "com.lyft.android.driver",
+      "display_name": "Lyft Driver",
+      "publisher": "Lyft",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "Lyft driver-facing app; precise location"
+    },
+    {
+      "package_name": "com.ubercab.driver",
+      "display_name": "Uber Driver",
+      "publisher": "Uber",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "Uber driver-facing app; precise location"
+    },
+    {
+      "package_name": "com.google.android.calendar",
+      "display_name": "Google Calendar",
+      "publisher": "Google",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Calendar app; scheduling data tied to Google account"
+    },
+    {
+      "package_name": "com.microsoft.office.onenote",
+      "display_name": "Microsoft OneNote",
+      "publisher": "Microsoft",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Note-taking app; account-tied notes"
+    },
+    {
+      "package_name": "com.google.android.apps.tasks",
+      "display_name": "Google Tasks",
+      "publisher": "Google",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Task list; account-tied data"
+    },
+    {
+      "package_name": "com.google.android.keep",
+      "display_name": "Google Keep",
+      "publisher": "Google",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Note-taking app; account-tied notes"
+    },
+    {
+      "package_name": "com.google.android.apps.messaging",
+      "display_name": "Google Messages",
+      "publisher": "Google",
+      "category": "communication",
+      "category_risk_tier": 1,
+      "notes": "SMS/RCS messaging app on many Android phones"
+    },
+    {
+      "package_name": "com.samsung.android.messaging",
+      "display_name": "Samsung Messages",
+      "publisher": "Samsung",
+      "category": "communication",
+      "category_risk_tier": 1,
+      "notes": "SMS messaging app on Samsung devices"
+    },
+    {
+      "package_name": "com.google.android.dialer",
+      "display_name": "Google Phone",
+      "publisher": "Google",
+      "category": "communication",
+      "category_risk_tier": 1,
+      "notes": "Dialer app; call history tied to device account"
+    },
+    {
+      "package_name": "com.fossil.fmnandroid",
+      "display_name": "Fossil Smartwatches",
+      "publisher": "Fossil Group",
+      "category": "smart_home",
+      "category_risk_tier": 2,
+      "notes": "Smartwatch companion app; health and notification data"
+    },
+    {
+      "package_name": "com.samsung.android.wearable.galaxywatch",
+      "display_name": "Galaxy Wearable",
+      "publisher": "Samsung",
+      "category": "smart_home",
+      "category_risk_tier": 2,
+      "notes": "Samsung wearable companion app"
+    },
+    {
+      "package_name": "com.google.android.calculator",
+      "display_name": "Google Calculator",
+      "publisher": "Google",
+      "category": "utilities",
+      "category_risk_tier": 1,
+      "notes": "Calculator utility"
+    },
+    {
+      "package_name": "com.google.android.deskclock",
+      "display_name": "Google Clock",
+      "publisher": "Google",
+      "category": "utilities",
+      "category_risk_tier": 1,
+      "notes": "Clock, alarm, and timer utility"
+    },
+    {
+      "package_name": "com.crypto.app",
+      "display_name": "Crypto.com",
+      "publisher": "Foris DAX",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Crypto exchange and card; account-tied trades and balances"
+    },
+    {
+      "package_name": "com.gemini.android.app",
+      "display_name": "Gemini",
+      "publisher": "Gemini Trust",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Crypto exchange; account-tied trades and balances"
+    },
+    {
+      "package_name": "com.honey.android",
+      "display_name": "Honey",
+      "publisher": "PayPal",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Coupon and price comparison app; browser activity tracking"
+    },
+    {
+      "package_name": "com.rakuten.android.shopping",
+      "display_name": "Rakuten",
+      "publisher": "Rakuten",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Cashback shopping app; tracks purchases for rewards"
+    },
+    {
+      "package_name": "com.consumertrack.android.shopkick",
+      "display_name": "Shopkick",
+      "publisher": "Shopkick",
+      "category": "shopping",
+      "category_risk_tier": 3,
+      "notes": "Rewards app; uses location to detect store visits"
+    },
+    {
+      "package_name": "com.schwab.mobile",
+      "display_name": "Charles Schwab",
+      "publisher": "Charles Schwab",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Brokerage and banking; camera for check deposit, account-tied transactions"
+    },
+    {
+      "package_name": "com.konylabs.capitalone",
+      "display_name": "Capital One Mobile",
+      "publisher": "Capital One",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Major US bank and credit card issuer; camera for check deposit"
+    },
+    {
+      "package_name": "com.fidelity.android",
+      "display_name": "Fidelity Investments",
+      "publisher": "Fidelity",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Brokerage and retirement accounts; account-tied investment data"
+    },
+    {
+      "package_name": "com.usbank.mobilebanking",
+      "display_name": "U.S. Bank",
+      "publisher": "U.S. Bank",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Major US bank; camera for check deposit"
+    },
+    {
+      "package_name": "com.pnc.ecommerce.mobile",
+      "display_name": "PNC Mobile",
+      "publisher": "PNC Financial Services",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Major US bank; camera for check deposit"
+    },
+    {
+      "package_name": "com.geico.mobile",
+      "display_name": "GEICO",
+      "publisher": "GEICO",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Auto insurance; camera for damage photos and document scans"
+    },
+    {
+      "package_name": "com.statefarm.pocketagent",
+      "display_name": "State Farm",
+      "publisher": "State Farm",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Insurance; camera for claims, location for roadside assistance"
+    },
+    {
+      "package_name": "com.phonevalley.progressive",
+      "display_name": "Progressive",
+      "publisher": "Progressive",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Auto insurance; camera and location for claims and Snapshot driving program"
+    },
+    {
+      "package_name": "com.allstate.view",
+      "display_name": "Allstate Mobile",
+      "publisher": "Allstate",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Insurance; camera for damage photos, location for roadside assistance"
+    },
+    {
+      "package_name": "com.cvs.launchers.cvs",
+      "display_name": "CVS",
+      "publisher": "CVS Health",
+      "category": "retail",
+      "category_risk_tier": 2,
+      "notes": "Pharmacy and drugstore; prescription history and health data"
+    },
+    {
+      "package_name": "com.walgreens.android.application",
+      "display_name": "Walgreens",
+      "publisher": "Walgreens",
+      "category": "retail",
+      "category_risk_tier": 2,
+      "notes": "Pharmacy and drugstore; prescription history and health data"
+    },
+    {
+      "package_name": "com.macys.android",
+      "display_name": "Macy's",
+      "publisher": "Macy's",
+      "category": "retail",
+      "category_risk_tier": 2,
+      "notes": "Department store retailer"
+    },
+    {
+      "package_name": "com.kroger.mobile",
+      "display_name": "Kroger",
+      "publisher": "The Kroger Co.",
+      "category": "retail",
+      "category_risk_tier": 2,
+      "notes": "Grocery retailer; loyalty card tied to purchase history"
+    },
+    {
+      "package_name": "com.sephora",
+      "display_name": "Sephora",
+      "publisher": "Sephora",
+      "category": "retail",
+      "category_risk_tier": 2,
+      "notes": "Cosmetics retailer; camera for product visualization features"
+    },
+    {
+      "package_name": "com.ulta",
+      "display_name": "Ulta Beauty",
+      "publisher": "Ulta Beauty",
+      "category": "retail",
+      "category_risk_tier": 2,
+      "notes": "Cosmetics retailer"
+    },
+    {
+      "package_name": "com.ingka.ikea.app",
+      "display_name": "IKEA",
+      "publisher": "IKEA",
+      "category": "retail",
+      "category_risk_tier": 2,
+      "notes": "Furniture retailer; camera for AR room visualization"
+    },
+    {
+      "package_name": "com.washingtonpost.android",
+      "display_name": "Washington Post",
+      "publisher": "The Washington Post",
+      "category": "news",
+      "category_risk_tier": 1,
+      "notes": "News publication"
+    },
+    {
+      "package_name": "com.usatoday.android.news",
+      "display_name": "USA Today",
+      "publisher": "Gannett",
+      "category": "news",
+      "category_risk_tier": 1,
+      "notes": "News publication"
+    },
+    {
+      "package_name": "com.bloomberg.btva",
+      "display_name": "Bloomberg: Business News",
+      "publisher": "Bloomberg",
+      "category": "news",
+      "category_risk_tier": 1,
+      "notes": "Business news and financial data"
+    },
+    {
+      "package_name": "com.npr.android.news",
+      "display_name": "NPR News",
+      "publisher": "NPR",
+      "category": "news",
+      "category_risk_tier": 1,
+      "notes": "Public radio news"
+    },
+    {
+      "package_name": "com.npr.one",
+      "display_name": "NPR One",
+      "publisher": "NPR",
+      "category": "news",
+      "category_risk_tier": 1,
+      "notes": "Public radio audio streaming"
+    },
+    {
+      "package_name": "com.tencent.ig",
+      "display_name": "PUBG Mobile",
+      "publisher": "Tencent / KRAFTON",
+      "category": "games",
+      "category_risk_tier": 3,
+      "notes": "Battle royale game; account profile and gameplay data"
+    },
+    {
+      "package_name": "com.innersloth.spacemafia",
+      "display_name": "Among Us",
+      "publisher": "Innersloth",
+      "category": "games",
+      "category_risk_tier": 1,
+      "notes": "Multiplayer social-deduction game"
+    },
+    {
+      "package_name": "com.miHoYo.GenshinImpact",
+      "display_name": "Genshin Impact",
+      "publisher": "miHoYo / HoYoverse",
+      "category": "games",
+      "category_risk_tier": 2,
+      "notes": "Open-world RPG; account-tied gameplay data"
+    },
+    {
+      "package_name": "com.supercell.clashroyale",
+      "display_name": "Clash Royale",
+      "publisher": "Supercell",
+      "category": "games",
+      "category_risk_tier": 1,
+      "notes": "Real-time strategy game"
+    },
+    {
+      "package_name": "com.blizzard.wtcg.hearthstone",
+      "display_name": "Hearthstone",
+      "publisher": "Blizzard Entertainment",
+      "category": "games",
+      "category_risk_tier": 1,
+      "notes": "Digital collectible card game"
+    },
+    {
+      "package_name": "com.kiloo.subwaysurf",
+      "display_name": "Subway Surfers",
+      "publisher": "Sybo / Kiloo",
+      "category": "games",
+      "category_risk_tier": 2,
+      "notes": "Endless runner game"
+    },
+    {
+      "package_name": "com.dts.freefireth",
+      "display_name": "Garena Free Fire",
+      "publisher": "Garena",
+      "category": "games",
+      "category_risk_tier": 3,
+      "notes": "Battle royale game; account profile and gameplay data"
+    },
+    {
+      "package_name": "com.cisco.webex.meetings",
+      "display_name": "Webex Meetings",
+      "publisher": "Cisco",
+      "category": "communication",
+      "category_risk_tier": 2,
+      "notes": "Video conferencing; microphone and camera for meetings"
+    },
+    {
+      "package_name": "com.webmd.android",
+      "display_name": "WebMD",
+      "publisher": "WebMD",
+      "category": "health",
+      "category_risk_tier": 2,
+      "notes": "Health information; symptom checker may collect health-related queries"
+    },
+    {
+      "package_name": "com.goodrx",
+      "display_name": "GoodRx",
+      "publisher": "GoodRx",
+      "category": "health",
+      "category_risk_tier": 2,
+      "notes": "Prescription drug pricing; medication search history"
+    },
+    {
+      "package_name": "com.teladoc.members",
+      "display_name": "Teladoc",
+      "publisher": "Teladoc Health",
+      "category": "health",
+      "category_risk_tier": 3,
+      "notes": "Telehealth; camera and microphone for video appointments, sensitive medical data"
+    },
+    {
+      "package_name": "epic.mychart.android",
+      "display_name": "MyChart",
+      "publisher": "Epic Systems",
+      "category": "health",
+      "category_risk_tier": 2,
+      "notes": "Health system patient portal; sensitive medical records"
+    },
+    {
+      "package_name": "com.quizlet.quizletandroid",
+      "display_name": "Quizlet",
+      "publisher": "Quizlet",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Flashcards and study tools"
+    },
+    {
+      "package_name": "com.chegg",
+      "display_name": "Chegg",
+      "publisher": "Chegg",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Education platform; camera for homework help, account-tied data"
+    },
+    {
+      "package_name": "com.brainly",
+      "display_name": "Brainly",
+      "publisher": "Brainly",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Homework help platform; camera for question scanning"
+    },
+    {
+      "package_name": "com.microblink.photomath",
+      "display_name": "Photomath",
+      "publisher": "Photomath / Google",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Math problem solver; camera for scanning equations"
+    },
+    {
+      "package_name": "com.google.android.apps.nbu.files",
+      "display_name": "Files by Google",
+      "publisher": "Google",
+      "category": "utilities",
+      "category_risk_tier": 1,
+      "notes": "File manager; storage access"
+    },
+    {
+      "package_name": "com.metago.astro",
+      "display_name": "ASTRO File Manager",
+      "publisher": "Metago",
+      "category": "utilities",
+      "category_risk_tier": 2,
+      "notes": "File manager; broad storage access"
+    },
+    {
+      "package_name": "au.com.shiftyjelly.pocketcasts",
+      "display_name": "Pocket Casts",
+      "publisher": "Pocket Casts",
+      "category": "streaming",
+      "category_risk_tier": 1,
+      "notes": "Podcast player"
+    },
+    {
+      "package_name": "com.clearchannel.iheartradio.controller",
+      "display_name": "iHeartRadio",
+      "publisher": "iHeartMedia",
+      "category": "streaming",
+      "category_risk_tier": 2,
+      "notes": "Radio streaming and podcasts"
+    },
+    {
+      "package_name": "com.bambuna.podcastaddict",
+      "display_name": "Podcast Addict",
+      "publisher": "Bambuna Software",
+      "category": "streaming",
+      "category_risk_tier": 1,
+      "notes": "Podcast player"
+    },
+    {
+      "package_name": "com.urbandroid.sleep",
+      "display_name": "Sleep as Android",
+      "publisher": "Urbandroid",
+      "category": "health",
+      "category_risk_tier": 2,
+      "notes": "Sleep tracker; microphone for snore detection during sleep"
+    },
+    {
+      "package_name": "com.canva.editor",
+      "display_name": "Canva",
+      "publisher": "Canva",
+      "category": "photo_video",
+      "category_risk_tier": 2,
+      "notes": "Design app; camera and storage access for media"
+    },
+    {
+      "package_name": "com.camerasideas.instashot",
+      "display_name": "InShot",
+      "publisher": "InShot",
+      "category": "photo_video",
+      "category_risk_tier": 2,
+      "notes": "Video editor; camera and media access"
+    },
+    {
+      "package_name": "co.bird.android",
+      "display_name": "Bird",
+      "publisher": "Bird Rides",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "E-scooter sharing; precise location for vehicle availability and rides"
+    },
+    {
+      "package_name": "com.limebike",
+      "display_name": "Lime",
+      "publisher": "Lime",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "E-scooter and bike sharing; precise location for vehicle availability"
+    },
+    {
+      "package_name": "app.phantom",
+      "display_name": "Phantom Wallet",
+      "publisher": "Phantom",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Crypto wallet for Solana and other chains"
+    },
+    {
+      "package_name": "com.kucoin.android",
+      "display_name": "KuCoin",
+      "publisher": "KuCoin",
+      "category": "finance",
+      "category_risk_tier": 3,
+      "notes": "Crypto exchange; account-tied trades, varying jurisdictional regulation"
+    },
+    {
+      "package_name": "com.gotomeeting",
+      "display_name": "GoToMeeting",
+      "publisher": "LogMeIn / GoTo",
+      "category": "communication",
+      "category_risk_tier": 2,
+      "notes": "Video conferencing"
+    },
+    {
+      "package_name": "com.mattermost.rn",
+      "display_name": "Mattermost",
+      "publisher": "Mattermost",
+      "category": "communication",
+      "category_risk_tier": 1,
+      "notes": "Open-source team messaging"
+    },
+    {
+      "package_name": "stackexchange.com.app",
+      "display_name": "Stack Exchange",
+      "publisher": "Stack Exchange",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Q&A platform reader"
+    },
+    {
+      "package_name": "com.ecosia.android",
+      "display_name": "Ecosia",
+      "publisher": "Ecosia",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Privacy-respecting search browser"
+    },
+    {
+      "package_name": "net.cozic.joplin",
+      "display_name": "Joplin",
+      "publisher": "Joplin",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Open-source note-taking and to-do app"
+    },
+    {
+      "package_name": "com.caynax.a6w",
+      "display_name": "Six Pack in 30 Days",
+      "publisher": "Caynax",
+      "category": "fitness",
+      "category_risk_tier": 1,
+      "notes": "Workout app; activity tracking"
+    },
+    {
+      "package_name": "com.popularapp.thirtydayfitnesschallenge",
+      "display_name": "30 Day Fitness Challenge",
+      "publisher": "Leap Fitness",
+      "category": "fitness",
+      "category_risk_tier": 1,
+      "notes": "Workout app; activity tracking"
+    },
+    {
+      "package_name": "com.mapswithme.maps.pro",
+      "display_name": "Organic Maps",
+      "publisher": "Organic Maps",
+      "category": "navigation",
+      "category_risk_tier": 1,
+      "notes": "Offline maps app; precise location for navigation"
+    },
+    {
+      "package_name": "com.cbs.app",
+      "display_name": "Paramount+",
+      "publisher": "Paramount",
+      "category": "streaming",
+      "category_risk_tier": 2,
+      "notes": "Video streaming service"
+    },
+    {
+      "package_name": "com.discovery.discoveryplus.mobile",
+      "display_name": "Discovery+",
+      "publisher": "Warner Bros. Discovery",
+      "category": "streaming",
+      "category_risk_tier": 2,
+      "notes": "Video streaming service"
+    },
+    {
+      "package_name": "tv.pluto.android",
+      "display_name": "Pluto TV",
+      "publisher": "Paramount",
+      "category": "streaming",
+      "category_risk_tier": 2,
+      "notes": "Free ad-supported video streaming"
+    },
+    {
+      "package_name": "com.tubitv",
+      "display_name": "Tubi",
+      "publisher": "Fox",
+      "category": "streaming",
+      "category_risk_tier": 2,
+      "notes": "Free ad-supported video streaming"
+    },
+    {
+      "package_name": "com.movieplus.live.movies.tv",
+      "display_name": "Crackle",
+      "publisher": "Chicken Soup for the Soul",
+      "category": "streaming",
+      "category_risk_tier": 2,
+      "notes": "Free ad-supported video streaming"
+    },
+    {
+      "package_name": "com.zillow.android.zillowmap",
+      "display_name": "Zillow",
+      "publisher": "Zillow Group",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Real estate listings; precise location for property search"
+    },
+    {
+      "package_name": "com.move.realtor",
+      "display_name": "Realtor.com",
+      "publisher": "Realtor.com",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Real estate listings; precise location for property search"
+    },
+    {
+      "package_name": "com.redfin.android",
+      "display_name": "Redfin",
+      "publisher": "Redfin",
+      "category": "shopping",
+      "category_risk_tier": 2,
+      "notes": "Real estate listings; precise location for property search"
+    },
+    {
+      "package_name": "com.linkedin.android.jobs.jobseeker",
+      "display_name": "LinkedIn Jobs",
+      "publisher": "LinkedIn (Microsoft)",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Job search; profile and search history"
+    },
+    {
+      "package_name": "com.indeed.android.jobsearch",
+      "display_name": "Indeed Job Search",
+      "publisher": "Indeed",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Job search and applications"
+    },
+    {
+      "package_name": "com.glassdoor.app",
+      "display_name": "Glassdoor",
+      "publisher": "Glassdoor",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Job search and company reviews"
+    },
+    {
+      "package_name": "com.ziprecruiter.android.jobs",
+      "display_name": "ZipRecruiter",
+      "publisher": "ZipRecruiter",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Job search and applications"
+    },
+    {
+      "package_name": "com.shazam.android",
+      "display_name": "Shazam",
+      "publisher": "Apple",
+      "category": "streaming",
+      "category_risk_tier": 1,
+      "notes": "Music identification; microphone access for ambient audio sampling"
+    },
+    {
+      "package_name": "com.melodis.midomiMusicIdentifier.freemium",
+      "display_name": "SoundHound",
+      "publisher": "SoundHound",
+      "category": "streaming",
+      "category_risk_tier": 1,
+      "notes": "Music identification; microphone access for ambient audio sampling"
+    },
+    {
+      "package_name": "com.smule.singandroid",
+      "display_name": "Smule",
+      "publisher": "Smule",
+      "category": "streaming",
+      "category_risk_tier": 2,
+      "notes": "Karaoke and singing; microphone access"
+    },
+    {
+      "package_name": "org.joinmastodon.android",
+      "display_name": "Mastodon",
+      "publisher": "Mastodon gGmbH",
+      "category": "social_media",
+      "category_risk_tier": 1,
+      "notes": "Decentralized social network client"
+    },
+    {
+      "package_name": "com.theathletic.android",
+      "display_name": "The Athletic",
+      "publisher": "The New York Times",
+      "category": "news",
+      "category_risk_tier": 1,
+      "notes": "Sports journalism subscription"
+    },
+    {
+      "package_name": "org.torproject.torbrowser",
+      "display_name": "Tor Browser",
+      "publisher": "Tor Project",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Anonymous web browser routing through Tor network"
+    },
+    {
+      "package_name": "com.duckduckgo.mobile.android.privacypro.vpn",
+      "display_name": "DuckDuckGo Privacy Pro VPN",
+      "publisher": "DuckDuckGo",
+      "category": "vpn",
+      "category_risk_tier": 1,
+      "notes": "Privacy-focused VPN"
+    },
+    {
+      "package_name": "com.ichi2.anki",
+      "display_name": "AnkiDroid",
+      "publisher": "AnkiDroid Open Source Team",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Spaced repetition flashcards"
+    },
+    {
+      "package_name": "cc.forestapp",
+      "display_name": "Forest: Stay Focused",
+      "publisher": "SEEKRTECH",
+      "category": "productivity",
+      "category_risk_tier": 1,
+      "notes": "Focus timer with virtual tree-planting reward system"
+    },
+    {
+      "package_name": "io.faceapp",
+      "display_name": "FaceApp",
+      "publisher": "FaceApp Technology",
+      "category": "photo_video",
+      "category_risk_tier": 3,
+      "notes": "Facial photo editor; camera and storage access, has historically faced privacy scrutiny over data handling"
+    },
+    {
+      "package_name": "com.playrix.gardenscapes",
+      "display_name": "Gardenscapes",
+      "publisher": "Playrix",
+      "category": "games",
+      "category_risk_tier": 1,
+      "notes": "Match-3 puzzle game"
+    },
+    {
+      "package_name": "com.playrix.homescapes",
+      "display_name": "Homescapes",
+      "publisher": "Playrix",
+      "category": "games",
+      "category_risk_tier": 1,
+      "notes": "Match-3 puzzle game"
+    },
+    {
+      "package_name": "com.playrix.township",
+      "display_name": "Township",
+      "publisher": "Playrix",
+      "category": "games",
+      "category_risk_tier": 1,
+      "notes": "Farm and city-building game"
+    },
+    {
+      "package_name": "com.miniclip.eightballpool",
+      "display_name": "8 Ball Pool",
+      "publisher": "Miniclip",
+      "category": "games",
+      "category_risk_tier": 1,
+      "notes": "Online pool game"
+    },
+    {
+      "package_name": "com.android.chrome",
+      "display_name": "Chrome",
+      "publisher": "Google",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Web browser; Google account-tied browsing data"
+    },
+    {
+      "package_name": "com.frontierairlines.frontiermobile",
+      "display_name": "Frontier Airlines",
+      "publisher": "Frontier Airlines",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "Airline app; location for flight tracking and boarding"
+    },
+    {
+      "package_name": "com.hawaiianairlines.app",
+      "display_name": "Hawaiian Airlines",
+      "publisher": "Hawaiian Airlines",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "Airline app; location for flight tracking and boarding"
+    },
+    {
+      "package_name": "com.alaskaairlines.android.lounge",
+      "display_name": "Alaska Lounge",
+      "publisher": "Alaska Airlines",
+      "category": "travel",
+      "category_risk_tier": 1,
+      "notes": "Lounge access app for Alaska Airlines"
+    },
+    {
+      "package_name": "com.huntington.m",
+      "display_name": "Huntington Mobile",
+      "publisher": "Huntington Bancshares",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Regional US bank; camera for check deposit"
+    },
+    {
+      "package_name": "com.clairmail.fth",
+      "display_name": "Fifth Third Bank",
+      "publisher": "Fifth Third Bank",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Regional US bank; camera for check deposit"
+    },
+    {
+      "package_name": "com.citizensbank.androidapp",
+      "display_name": "Citizens Bank",
+      "publisher": "Citizens Financial",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Regional US bank; camera for check deposit"
+    },
+    {
+      "package_name": "com.zwift.zwiftgame",
+      "display_name": "Zwift",
+      "publisher": "Zwift",
+      "category": "fitness",
+      "category_risk_tier": 2,
+      "notes": "Indoor cycling and running platform; pairs with fitness sensors"
+    },
+    {
+      "package_name": "com.classpass.android",
+      "display_name": "ClassPass",
+      "publisher": "ClassPass",
+      "category": "fitness",
+      "category_risk_tier": 2,
+      "notes": "Fitness class booking; location and payment data"
+    },
+    {
+      "package_name": "com.scribd.app.reader0",
+      "display_name": "Scribd",
+      "publisher": "Scribd",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "Subscription reading service"
+    },
+    {
+      "package_name": "com.google.earth",
+      "display_name": "Google Earth",
+      "publisher": "Google",
+      "category": "navigation",
+      "category_risk_tier": 2,
+      "notes": "3D Earth viewer; location access for current view"
+    },
+    {
+      "package_name": "com.flo.period.tracker.calendar",
+      "display_name": "Flo Period Tracker",
+      "publisher": "Flo Health",
+      "category": "health",
+      "category_risk_tier": 3,
+      "notes": "Period and pregnancy tracker; sensitive reproductive health data"
+    },
+    {
+      "package_name": "com.glow.android",
+      "display_name": "Glow",
+      "publisher": "Glow",
+      "category": "health",
+      "category_risk_tier": 3,
+      "notes": "Period and fertility tracker; sensitive reproductive health data"
+    },
+    {
+      "package_name": "com.spd.MoodPath",
+      "display_name": "MoodPath",
+      "publisher": "MoodPath",
+      "category": "health",
+      "category_risk_tier": 3,
+      "notes": "Mental health tracker; sensitive psychological assessment data"
+    },
+    {
+      "package_name": "com.cigna.mobile.mycigna",
+      "display_name": "myCigna",
+      "publisher": "Cigna",
+      "category": "health",
+      "category_risk_tier": 2,
+      "notes": "Health insurance; medical claims and benefits data"
+    },
+    {
+      "package_name": "com.mobile.uhc",
+      "display_name": "UnitedHealthcare",
+      "publisher": "UnitedHealth Group",
+      "category": "health",
+      "category_risk_tier": 2,
+      "notes": "Health insurance; medical claims and benefits data"
+    },
+    {
+      "package_name": "im.threema.app",
+      "display_name": "Threema",
+      "publisher": "Threema GmbH",
+      "category": "messaging",
+      "category_risk_tier": 1,
+      "notes": "End-to-end encrypted messaging; Swiss jurisdiction"
+    },
+    {
+      "package_name": "ch.threema.app.libre",
+      "display_name": "Threema Libre",
+      "publisher": "Threema GmbH",
+      "category": "messaging",
+      "category_risk_tier": 1,
+      "notes": "Open-source build of Threema messaging"
+    },
+    {
+      "package_name": "com.wire",
+      "display_name": "Wire",
+      "publisher": "Wire Swiss GmbH",
+      "category": "messaging",
+      "category_risk_tier": 1,
+      "notes": "End-to-end encrypted messaging and calls"
+    },
+    {
+      "package_name": "im.molly.app",
+      "display_name": "Molly",
+      "publisher": "Molly Open Source",
+      "category": "messaging",
+      "category_risk_tier": 1,
+      "notes": "Hardened fork of Signal messenger"
+    },
+    {
+      "package_name": "org.session.messenger",
+      "display_name": "Session",
+      "publisher": "Oxen Privacy Tech Foundation",
+      "category": "messaging",
+      "category_risk_tier": 1,
+      "notes": "Decentralized end-to-end encrypted messaging"
+    },
+    {
+      "package_name": "org.jitsi.meet",
+      "display_name": "Jitsi Meet",
+      "publisher": "8x8 / Jitsi",
+      "category": "communication",
+      "category_risk_tier": 1,
+      "notes": "Open-source video conferencing"
+    },
+    {
+      "package_name": "com.tdameritrade.mobile3",
+      "display_name": "TD Ameritrade",
+      "publisher": "Charles Schwab / TD Ameritrade",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Brokerage app (legacy; merging into Schwab)"
+    },
+    {
+      "package_name": "com.etrade.mobilepro.activity",
+      "display_name": "E*TRADE",
+      "publisher": "Morgan Stanley / E*TRADE",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Brokerage and banking; account-tied investment data"
+    },
+    {
+      "package_name": "com.truist.mobile",
+      "display_name": "Truist Mobile",
+      "publisher": "Truist Financial",
+      "category": "finance",
+      "category_risk_tier": 2,
+      "notes": "Major US bank; camera for check deposit"
+    },
+    {
+      "package_name": "tv.fubo.mobile",
+      "display_name": "Fubo",
+      "publisher": "Fubo",
+      "category": "streaming",
+      "category_risk_tier": 2,
+      "notes": "Live TV streaming"
+    },
+    {
+      "package_name": "com.sling",
+      "display_name": "Sling TV",
+      "publisher": "DISH Network",
+      "category": "streaming",
+      "category_risk_tier": 2,
+      "notes": "Live TV streaming"
+    },
+    {
+      "package_name": "com.youtube.tv",
+      "display_name": "YouTube TV",
+      "publisher": "Google",
+      "category": "streaming",
+      "category_risk_tier": 2,
+      "notes": "Live TV streaming from Google"
+    },
+    {
+      "package_name": "com.bamnetworks.mobile.android.gameday.atbat",
+      "display_name": "MLB",
+      "publisher": "Major League Baseball",
+      "category": "streaming",
+      "category_risk_tier": 1,
+      "notes": "Baseball news and live games"
+    },
+    {
+      "package_name": "com.nba.game",
+      "display_name": "NBA",
+      "publisher": "NBA",
+      "category": "streaming",
+      "category_risk_tier": 1,
+      "notes": "Basketball news and live games"
+    },
+    {
+      "package_name": "com.gotv.nflgamecenter.us.lite",
+      "display_name": "NFL",
+      "publisher": "NFL",
+      "category": "streaming",
+      "category_risk_tier": 1,
+      "notes": "Football news and live games"
+    },
+    {
+      "package_name": "com.handshake.app",
+      "display_name": "Handshake",
+      "publisher": "Handshake",
+      "category": "productivity",
+      "category_risk_tier": 2,
+      "notes": "College career platform; profile and job search data"
+    },
+    {
+      "package_name": "com.airbnb.android.lite",
+      "display_name": "Airbnb Lite",
+      "publisher": "Airbnb",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "Lightweight Airbnb client"
+    },
+    {
+      "package_name": "com.tripit",
+      "display_name": "TripIt",
+      "publisher": "Concur Technologies / SAP",
+      "category": "travel",
+      "category_risk_tier": 2,
+      "notes": "Travel itinerary aggregator"
+    },
+    {
+      "package_name": "com.nest.android",
+      "display_name": "Nest",
+      "publisher": "Google",
+      "category": "smart_home",
+      "category_risk_tier": 2,
+      "notes": "Legacy Nest companion app; controls thermostats and cameras"
+    },
+    {
+      "package_name": "com.dts.freefiremax",
+      "display_name": "Free Fire MAX",
+      "publisher": "Garena",
+      "category": "games",
+      "category_risk_tier": 3,
+      "notes": "HD version of Garena Free Fire battle royale; account profile and gameplay data"
     }
-  ]
+  ],
+  "publisher_overrides": [
+    {
+      "publisher": "Verizon Media / Yahoo",
+      "package_prefix": "com.yahoo",
+      "override_tier": 3,
+      "direction": "up",
+      "basis": "Publisher has historically been associated with large-scale data monetisation and third-party data sharing practices across its app portfolio."
+    },
+    {
+      "publisher": "ByteDance",
+      "package_prefix": "com.zhiliaoapp",
+      "override_tier": 3,
+      "direction": "up",
+      "basis": "Publisher has been subject to regulatory scrutiny in multiple jurisdictions related to data collection and potential third-party data sharing practices."
+    },
+    {
+      "publisher": "Vungle / Liftoff",
+      "package_prefix": "com.vungle",
+      "override_tier": 3,
+      "direction": "up",
+      "basis": "Publisher operates primarily as an ad network and has been associated with broad data collection practices across integrated apps."
+    },
+    {
+      "publisher": "ironSource",
+      "package_prefix": "com.ironsource",
+      "override_tier": 3,
+      "direction": "up",
+      "basis": "Publisher operates as an ad monetisation platform and has been associated with extensive device and behavioural data collection practices."
+    },
+    {
+      "publisher": "Signal",
+      "package_prefix": "org.thoughtcrime",
+      "override_tier": 1,
+      "direction": "down",
+      "basis": "Publisher has a well-documented commitment to end-to-end encryption and minimal data collection. No known third-party data sharing practices."
+    },
+    {
+      "publisher": "Proton AG",
+      "package_prefix": "ch.protonmail",
+      "override_tier": 1,
+      "direction": "down",
+      "basis": "Publisher is a privacy-focused company with audited, open-source applications and a documented no-data-sharing policy."
+    },
+    {
+      "publisher": "Mozilla",
+      "package_prefix": "org.mozilla",
+      "override_tier": 1,
+      "direction": "down",
+      "basis": "Publisher is a non-profit with publicly documented privacy policies and no known data brokerage practices."
+    },
+    {
+      "publisher": "DuckDuckGo",
+      "package_prefix": "com.duckduckgo",
+      "override_tier": 1,
+      "direction": "down",
+      "basis": "Publisher's core product and business model are built on user privacy. No known third-party data sharing or location data monetisation practices."
+    },
+    {
+      "publisher": "Bitwarden",
+      "package_prefix": "com.bitwarden",
+      "override_tier": 1,
+      "direction": "down",
+      "basis": "Open-source password manager with audited code and documented minimal data collection practices."
+    },
+    {
+      "publisher": "Google (AOSP)",
+      "package_prefix": "com.android.",
+      "override_tier": 1,
+      "direction": "down",
+      "basis": "Core Android OS component. Permissions are structurally required for system functionality and are typically non-revocable or essential for device operation (e.g., emergency services, telephony, debugging). Not a standalone data collector."
+    },
+    {
+      "publisher": "Google Play Services",
+      "package_prefix": "com.google.android.gms",
+      "override_tier": 1,
+      "direction": "down",
+      "basis": "Google Play Services system framework and sub-components. Permissions support core device services including location APIs, connectivity, and system integration. Revoking permissions may impair device functionality for all dependent apps."
+    },
+    {
+      "publisher": "Google",
+      "package_prefix": "com.google.android.apps.cbrsnetworkmonitor",
+      "override_tier": 1,
+      "direction": "down",
+      "basis": "FCC-mandated CBRS spectrum coordination service. Location access is required by federal regulation (Part 96) for shared spectrum allocation. Not a user-facing data collector."
+    },
+    {
+      "publisher": "Samsung (Shannon Modem)",
+      "package_prefix": "com.shannon.",
+      "override_tier": 1,
+      "direction": "down",
+      "basis": "Samsung Shannon baseband modem component. Permissions support telephony functions including VoLTE, Wi-Fi calling, and E911 emergency location reporting. Revoking permissions may impair calling and emergency services."
+    },
+    {
+      "publisher": "Google",
+      "package_prefix": "com.google.android.apps.stargate",
+      "override_tier": 1,
+      "direction": "down",
+      "basis": "Satellite emergency SOS gateway service. Location access is essential for transmitting position data to emergency responders via satellite. Only active during satellite SOS sessions."
+    }
+  ],
+  "metadata": {
+    "version": "1.4",
+    "last_updated": "2026-05-05",
+    "total_apps": 466,
+    "description": "Privacy Auditor seed risk database. Category risk tiers: 1=Low, 2=Medium, 3=High. Combined with permission aggressiveness score to produce final risk indicator.",
+    "scoring_note": "Risk indicators are based on app category, permission configuration, and publicly available information. They are provided for general awareness only and do not constitute definitive claims about any app or developer's data practices."
+  }
 }
